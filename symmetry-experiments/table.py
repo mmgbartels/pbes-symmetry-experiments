@@ -244,12 +244,19 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
         detect = avg(b["first"]["symmetry_detection"])
         chosen_time = avg([i + s for i, s in zip(b["chosen"]["instantiation"], b["chosen"]["solving"])])
 
-        if first_solve is not None and detect is not None:
-            first_time = f"{format_time(first_solve)} + {format_time(detect)}"
-        elif first_solve is not None:
-            first_time = format_time(first_solve)
-        else:
+        if first_solve is None and detect is None :
+            first_time = "-"
+
+        elif first_solve is None :
             first_time = "t-o"
+
+        else:
+            first_time = f"{format_time(first_solve)}"
+
+        if detect is None:
+            detection_cell = "t-o"
+        else:
+            detection_cell = f"+{format_time(detect)}"
 
         aggregated.append({
             "model": model or "-",
@@ -262,6 +269,7 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
 
             "original_time": original_time,
             "first_time": first_time,
+            "detection": detection_cell,     # NEW position
             "chosen_time": chosen_time,
         })
 
@@ -277,7 +285,7 @@ def write_csv(rows: List[Dict[str, Any]], path: str, digits: int):
     fields = [
         "model", "property", "answer",
         "original_v", "first_v", "chosen_v",
-        "original_time", "first_time", "chosen_time"
+        "original_time", "first_time", "detection", "chosen_time"  # detection between first_time and chosen_time
     ]
 
     with open(path, "w", newline="", encoding="utf-8") as f:
@@ -295,7 +303,10 @@ def write_csv(rows: List[Dict[str, Any]], path: str, digits: int):
                 r["chosen_v"],
 
                 format_time(r["original_time"]),
+                # Note: first_time may be a composed string like "a + b"; original script used format_time,
+                # keeping behavior consistent with minimal change request.
                 format_time(r["first_time"]),
+                r["detection"],
                 format_time(r["chosen_time"]),
             ])
 
@@ -310,7 +321,7 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
     header = [
         "", "", "",
         "\\multicolumn{3}{c|}{$|V|$}",
-        "\\multicolumn{3}{c}{Time}",
+        "\\multicolumn{4}{c}{Time}",  # Time now spans 4 columns
     ]
 
     subheader = [
@@ -322,6 +333,7 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
         "\\multicolumn{1}{c|}{Chosen}",
         "\\multicolumn{1}{c}{Original}",
         "\\multicolumn{1}{c}{First}",
+        "\\multicolumn{1}{c}{Detection}",  # Detection between First and Chosen
         "\\multicolumn{1}{c}{Chosen}",
     ]
 
@@ -345,6 +357,7 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
 
             fmt_cell(r["original_time"]),
             fmt_cell(r["first_time"]),
+            latex_escape(r["detection"]),     # Detection here, between first and chosen
             fmt_cell(r["chosen_time"]),
         ]))
 
@@ -372,7 +385,7 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
 
 \\resizebox{{\\linewidth}}{{!}}{{%
 \\rowcolors{{3}}{{white}}{{rowgray}}
-\\begin{{tabular}}{{llc|rrr|rrr}}
+\\begin{{tabular}}{{llc|rrr|rrrr}}
 {" & ".join(header)} \\\\
 \\midrule
 {" & ".join(subheader)} \\\\
