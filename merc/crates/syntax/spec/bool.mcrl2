@@ -1,0 +1,48 @@
+% Author(s): Aad Mathijssen, Jeroen Keiren
+% Copyright: see the accompanying file COPYING or copy at
+% https://github.com/mCRL2org/mCRL2/blob/master/COPYING
+%
+% Distributed under the Boost Software License, Version 1.0.
+% (See accompanying file LICENSE_1_0.txt or copy at
+% http://www.boost.org/LICENSE_1_0.txt)
+%
+% Specification of the Bool data sort.
+
+sort Bool;
+
+cons true: Bool;
+    false: Bool;
+
+map @not: Bool -> Bool;
+    @and: Bool # Bool -> Bool;
+    @or: Bool # Bool -> Bool;
+    @implies: Bool # Bool -> Bool;
+
+var b:Bool;
+eqn @not(true) = false;
+    @not(false) = true;
+    @not(@not(b)) = b;
+    @and(b,true) = b;
+    @and(b,false) = false;
+    @and(true,b) = b;
+    @and(false,b) = false;
+    @or(b,true) = true;
+    @or(b,false) = b;
+    @or(true,b) = true;
+    @or(false,b) = b;
+    @implies(b,true) = true;
+    @implies(b,false) = !(b);
+    @implies(true,b) = b;
+    @implies(false,b) = true;
+    @equals(true,b) = b;
+    @equals(false,b) = !(b);
+    @equals(b,true) = b;
+    @equals(b,false) = !(b);
+    @less(false,b) = b;
+    @less(true,b) = false;
+    @less(b,false) = false;
+    @less(b,true) = !(b);
+    @less_equal(false,b) = true;
+    @less_equal(true,b) = b;
+    @less_equal(b,false) = !(b);
+    @less_equal(b,true) = true;

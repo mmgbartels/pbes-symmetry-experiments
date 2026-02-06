@@ -1,0 +1,40 @@
+[package]
+name = "merc_unsafety"
+description = "Internal MERC crate containing various utility functions that use unsafe code blocks."
+readme = "README.md"
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[features]
+# Enables an allocator that counts additional metrics (but is slower), this disables `merc_jemalloc` and `merc_mimalloc`.
+merc_metrics = []
+
+# Feature to enable jemalloc as the global allocator. This feature only works if 
+# the `tikv-jemallocator` crate is supported on that platform.
+merc_jemalloc = ["dep:tikv-jemallocator"]
+
+# Feature to enable mimalloc as the global allocator.
+merc_mimalloc = ["dep:mimalloc"]
+
+# Enables extra debug options to be enabled. Also enables jemalloc debugging.
+merc_debug = ["tikv-jemallocator?/debug"]
+
+[dependencies]
+merc_collections.workspace = true
+merc_io.workspace = true
+merc_utilities.workspace = true
+
+allocator-api2.workspace = true
+dashmap.workspace = true
+equivalent.workspace = true
+itertools.workspace = true
+log.workspace = true
+rand.workspace = true
+rustc-hash.workspace = true
+
+mimalloc = { workspace = true, optional = true }
+tikv-jemallocator = { workspace = true, optional = true }

@@ -1,0 +1,31 @@
+[package]
+name = "merc_sabre"
+description = "Implements various term rewrite engines based on a set automaton matching construction."
+keywords = ["rewriting", "term"]
+categories = ["algorithms", "data-structures", "science"]
+readme = "README.md"
+
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+merc_aterm.workspace = true
+merc_data.workspace = true
+merc_utilities.workspace = true
+
+rustc-hash.workspace = true
+smallvec.workspace = true
+html-escape.workspace = true
+ahash.workspace = true
+env_logger.workspace = true
+log.workspace = true
+itertools.workspace = true
+rand.workspace = true
+
+[dev-dependencies]
+test-case.workspace = true
+test-log.workspace = true

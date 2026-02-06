@@ -1,0 +1,26 @@
+[package]
+name = "merc-vpg"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[features]
+# If we enable measurements also the oxidd measurements are enabled.
+merc_metrics = ["oxidd/statistics"]
+
+[dependencies]
+merc_syntax.workspace = true
+merc_tools.workspace = true
+merc_unsafety.workspace = true
+merc_symbolic.workspace = true
+merc_utilities.workspace = true
+merc_vpg= { workspace = true, features = ["clap"] }
+
+clap.workspace = true
+duct.workspace = true
+env_logger.workspace = true
+itertools.workspace = true
+log.workspace = true
+oxidd.workspace = true
+which.workspace = true

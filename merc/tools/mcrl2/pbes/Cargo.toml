@@ -1,0 +1,23 @@
+[package]
+name = "merc-pbes"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+mcrl2.workspace = true
+merc_io.workspace = true
+merc_tools.workspace = true
+merc_utilities.workspace = true
+
+clap.workspace = true
+env_logger.workspace = true
+itertools.workspace = true
+log.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+
+[features]
+# Enables the compiling rewriter option for mCRL2.
+mcrl2_jittyc = []

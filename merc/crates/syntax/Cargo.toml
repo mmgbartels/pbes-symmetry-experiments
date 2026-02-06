@@ -1,0 +1,27 @@
+[package]
+name = "merc_syntax"
+description = "Provides an AST and Pest grammar for the mCRL2 specification language."
+keywords = ["parsing", "specification"]
+categories = ["science"]
+readme = "README.md"
+
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+merc_pest_consume.workspace = true
+merc_utilities.workspace = true
+
+itertools.workspace = true
+log.workspace = true
+pest_derive.workspace = true
+pest.workspace = true
+
+[dev-dependencies]
+indoc.workspace = true
+test-case.workspace = true
+env_logger.workspace = true

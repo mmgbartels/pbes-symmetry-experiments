@@ -1,0 +1,17 @@
+[package]
+name = "merc_ltsgraph-lib"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+merc_lts.workspace = true
+merc_unsafety.workspace = true
+
+cosmic-text.workspace = true
+femtovg.workspace = true
+glam.workspace = true
+log.workspace = true
+rand.workspace = true
+tiny-skia.workspace = true

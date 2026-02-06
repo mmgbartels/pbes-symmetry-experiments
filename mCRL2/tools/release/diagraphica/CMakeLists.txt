@@ -1,0 +1,49 @@
+mcrl2_add_gui_tool(diagraphica
+  MENUNAME "DiaGraphica"
+  DESCRIPTION "Advanced state space visualisation tool (mCRL2 toolset)"
+  ICON "mcrl2-green"
+  SOURCES
+    icons.qrc
+    dofdialog.ui
+    mainwindow.ui
+    settingsdialog.ui
+    arcdiagram.cpp
+    attrdiscr.cpp
+    attribute.cpp
+    bundle.cpp
+    cluster.cpp
+    colorchooser.cpp
+    combnplot.cpp
+    corrlplot.cpp
+    diagram.cpp
+    diagrameditor.cpp
+    distrplot.cpp
+    dof.cpp
+    dofdialog.cpp
+    examiner.cpp
+    graph.cpp
+    main.cpp
+    mainwindow.cpp
+    movabletablewidget.cpp
+    node.cpp
+    parser.cpp
+    settingsdialog.cpp
+    shape.cpp
+    simulator.cpp
+    utils.cpp
+    visualizer.cpp
+    visutils.cpp
+  DEPENDS
+    mcrl2_lps
+    mcrl2_lts
+    mcrl2_utilities
+    mcrl2_gui
+    Qt6::Widgets
+    Qt6::Core
+    Qt6::OpenGL
+    Qt6::OpenGLWidgets
+    Qt6::Xml
+    Qt6::Gui
+    OpenGL::GL
+    OpenGL::GLU
+)

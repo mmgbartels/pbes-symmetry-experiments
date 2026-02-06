@@ -1,0 +1,21 @@
+[package]
+name = "merc_sharedmutex"
+description = "A read efficient readers-writer lock based on the busy-forbidden protocol."
+keywords = ["mutex", "thread", "rwlock"]
+categories = ["concurrency"]
+readme = "README.md"
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+merc_utilities.workspace = true
+
+crossbeam-utils.workspace = true
+delegate.workspace = true
+
+[dev-dependencies]
+rand.workspace = true

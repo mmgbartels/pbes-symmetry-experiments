@@ -1,0 +1,22 @@
+[package]
+name = "mcrl2"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+merc_collections.workspace = true
+mcrl2-macros.workspace = true
+mcrl2-sys.workspace = true
+merc_tools.workspace = true
+merc_utilities.workspace = true
+
+itertools.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+
+[features]
+# Enables the compiling rewriter option for mCRL2.
+mcrl2_jittyc = []

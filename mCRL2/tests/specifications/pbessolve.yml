@@ -1,0 +1,59 @@
+nodes:
+  l1:
+    type: pbesspec
+  l2:
+    type: pbes
+
+tools:
+  t1:
+    input: [l1]
+    output: [l2]
+    args: []
+    name: txt2pbes
+  t2:
+    input: [l2]
+    output: []
+    args: [--check-strategy]
+    name: pbessolve
+  t3:
+    input: [l2]
+    output: []
+    args: [-s1, --check-strategy]
+    name: pbessolve
+  t4:
+    input: [l2]
+    output: []
+    args: [-s2, --check-strategy]
+    name: pbessolve
+  t5:
+    input: [l2]
+    output: []
+    args: [-s3, --check-strategy]
+    name: pbessolve
+  t6:
+    input: [l2]
+    output: []
+    args: [-s4, --check-strategy, --aggressive, --prune-todo-list]
+    name: pbessolve
+  t6:
+    input: [l2]
+    output: []
+    args: [-s2, --aggressive, --prune-todo-list, --check-strategy]
+    name: pbessolve
+  t7:
+    input: [l2]
+    output: []
+    args: [-s3, --aggressive, --prune-todo-list, --check-strategy]
+    name: pbessolve
+  t8:
+    input: [l2]
+    output: []
+    args: [-s4, --aggressive, --prune-todo-list, --check-strategy]
+    name: pbessolve
+  t9:
+    input: [l2]
+    output: []
+    args: []
+    name: pbespgsolve
+result: |
+  result = t2.value['solution'] == t3.value['solution'] == t4.value['solution'] == t5.value['solution'] == t6.value['solution'] == t7.value['solution'] == t8.value['solution'] == t9.value['solution']

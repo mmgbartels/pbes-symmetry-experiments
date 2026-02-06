@@ -1,0 +1,22 @@
+[package]
+name = "merc_collections"
+description = "Internal MERC crate containing various collections."
+readme = "README.md"
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+merc_io.workspace = true
+merc_utilities.workspace = true
+
+bitvec.workspace = true
+delegate.workspace = true
+hashbrown.workspace = true
+itertools.workspace = true
+log.workspace = true
+rand.workspace = true
+rustc-hash.workspace = true

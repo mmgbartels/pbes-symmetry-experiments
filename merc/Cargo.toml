@@ -1,0 +1,138 @@
+[workspace.package]
+edition = "2024"
+homepage = "https://mercorg.github.io/merc-website/"
+repository = "https://github.com/mlaveaux/merc.git"
+license = "BSL-1.0"
+rust-version = "1.86.0"
+version = "1.0.0"
+
+# Add debug information to the release binaries.
+[profile.release]
+lto = "fat"
+panic = "abort"
+debug = "line-tables-only"
+split-debuginfo= "packed"
+
+[profile.dev]
+split-debuginfo= "packed"
+
+[workspace]
+resolver = "3"
+members = [
+    "3rd-party/pest_consume_macros",
+    "3rd-party/pest_consume",
+    "crates/aterm",
+    "crates/aterm/benchmarks",
+    "crates/collections",
+    "crates/data",
+    "crates/io",
+    "crates/ldd",
+    "crates/ldd/benchmarks",
+    "crates/lts",
+    "crates/macros",
+    "crates/number",
+    "crates/rec-tests",
+    "crates/reduction",
+    "crates/preorder",
+    "crates/sabre",
+    "crates/sabre/benchmarks",
+    "crates/symbolic",
+    "crates/sharedmutex",
+    "crates/sharedmutex/benchmarks",
+    "crates/syntax",
+    "crates/tools",
+    "crates/unsafety",
+    "crates/utilities",
+    "crates/vpg",
+    "crates/xtask",
+    "tools/lts",
+    "tools/rewrite",
+    "tools/sym",
+    "tools/vpg",
+]
+
+[workspace.dependencies]
+ahash = "0.8"
+bitvec = "1.0"
+bitstream-io = "4.9"
+bumpalo = "3.19"
+clap = { version = "4.5", features = ["derive"] }
+dashmap = { version = "7.0.0-rc2", features = ["inline-more"] }
+delegate = "0.13"
+env_logger = "0.11"
+equivalent = "1.0"
+hashbrown = "0.16"
+html-escape = "0.2"
+itertools = "0.14"
+log = "0.4"
+num = "0.4"
+parking_lot = "0.12"
+pest = "2.8"
+pest_derive  = "2.8"
+rand = "0.9"
+rayon = "1.11"
+regex = "1.12"
+rustc-hash = "2.1"
+smallvec = "1.15"
+thiserror = "2.0"
+toml = "0.9"
+oxidd = "0.11"
+winapi = { version = "0.3", features = ["consoleapi"] }
+
+# Used by the lower level crates
+allocator-api2 =  "0.4"
+backtrace = "0.3"
+crossbeam-utils = "0.8"
+mimalloc = "0.1"
+streaming-iterator = "0.1"
+tikv-jemallocator = "0.6"
+
+# Used in macros
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "2.0", features = ["full"] }
+
+# Used for xtask
+duct = "1.1"
+glob = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+which = "8.0"
+
+# Used in tests
+indoc  = "2.0"
+test-case  = "3.3"
+test-log = "0.2"
+trybuild = "1.0"
+tempfile = "3.24"
+
+# Used for benchmarks
+criterion = "0.8"
+
+# Used for FFI
+bindgen = "0.72"
+
+# The workspace crates.
+merc_aterm = { version = "1.0", path = "crates/aterm" }
+merc_collections = { path = "crates/collections" }
+merc_data = { version = "1.0", path = "crates/data" }
+merc_io = { version = "1.0", path = "crates/io" }
+merc_ldd = { path = "crates/ldd" }
+merc_lts = { version = "1.1", path = "crates/lts" }
+merc_macros = { version = "1.0", path = "crates/macros" }
+merc_number = { version = "1.0", path = "crates/number" }
+merc_preorder = { path = "crates/preorder" }
+merc_rec-tests = { path = "crates/rec-tests" }
+merc_reduction = { path = "crates/reduction" }
+merc_sabre = { path = "crates/sabre" }
+merc_sharedmutex = { version = "1.0", path = "crates/sharedmutex" }
+merc_symbolic = { path = "crates/symbolic", features= ["clap"] }
+merc_syntax = { version = "1.0", path = "crates/syntax" }
+merc_tools = { path = "crates/tools" }
+merc_unsafety = { version = "1.0", path = "crates/unsafety" }
+merc_utilities = { version = "1.0", path = "crates/utilities" }
+merc_vpg = { path = "crates/vpg" }
+
+# Vendored libraries
+merc_pest_consume  = { version = "2.0.0", path = "3rd-party/pest_consume" }
+merc_pest_consume_macros  = { version = "2.0.0", path = "3rd-party/pest_consume_macros" }

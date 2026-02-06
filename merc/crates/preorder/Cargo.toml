@@ -1,0 +1,36 @@
+[package]
+name = "merc_preorder"
+description = "Algorithms to compare labelled transition systems with respect to various preorders."
+keywords = ["comparison", "transition-systems"]
+categories = ["algorithms", "science"]
+readme = "README.md"
+version.workspace = true
+
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+clap = ["dep:clap"]
+
+[dependencies]
+merc_collections.workspace = true
+merc_io.workspace = true
+merc_lts.workspace = true
+merc_reduction.workspace = true
+merc_syntax.workspace = true
+merc_utilities.workspace = true
+
+bitvec.workspace = true
+bumpalo.workspace = true
+itertools.workspace = true
+log.workspace = true
+rand.workspace = true
+rustc-hash.workspace = true
+
+clap = { workspace = true, optional = true }
+
+[dev-dependencies]
+test-log.workspace = true

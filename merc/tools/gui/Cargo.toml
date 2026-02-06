@@ -1,0 +1,52 @@
+[workspace.package]
+authors = ["Maurice Laveaux"]
+edition = "2024"
+license = "BSL-1.0"
+repository = "https://github.com/mlaveaux/merc.git"
+rust-version = "1.90.0"
+version = "1.0.0"
+
+# Add debug information to the release binaries.
+[profile.release]
+lto = "fat"
+panic = "abort"
+debug = "line-tables-only"
+split-debuginfo= "packed"
+
+[profile.dev]
+split-debuginfo= "packed"
+
+[workspace]
+resolver = "3"
+members = [
+    "ltsgraph",
+    "ltsgraph-lib",
+    "ltsgraph-lib/benchmarks/"
+]
+
+[workspace.dependencies]
+clap = { version = "4.5", features = ["derive"] }
+cosmic-text = "0.16"
+env_logger = "0.11"
+femtovg = { version = "0.19", features = ["wgpu"] }
+glam = "0.30"
+log = "0.4"
+rfd = { version = "0.16", default-features = false, features = ["xdg-portal", "async-std"] }
+slint = { version = "1.14", features = ["compat-1-2", "std", "accessibility", "backend-winit", "renderer-femtovg"], default-features = false }
+slint-build = "1.14"
+tiny-skia = "0.11"
+tokio = { version = "1.48", features = ["rt", "macros"] }
+# This version must be kept in sync with femtovg
+wgpu = "27.0"
+rand = "0.9"
+
+# Used for benchmarks
+criterion = "0.8"
+
+# The workspace libraries.
+merc_io = { path = "../../crates/io" }
+merc_lts = { path = "../../crates/lts" }
+merc_ltsgraph-lib = { path = "ltsgraph-lib" }
+merc_tools = { path = "../../crates/tools" }
+merc_unsafety = { path = "../../crates/unsafety" }
+merc_utilities = { path = "../../crates/utilities" }

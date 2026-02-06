@@ -1,0 +1,21 @@
+[package]
+name = "merc_io"
+description = "Internal MERC toolset package containing various I/O related functionality."
+readme = "README.md"
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+merc_number.workspace = true
+merc_utilities.workspace = true
+
+bitstream-io.workspace = true
+log.workspace = true
+rand.workspace = true
+regex.workspace = true
+streaming-iterator.workspace = true
+thiserror.workspace = true
