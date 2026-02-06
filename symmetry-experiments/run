@@ -1,0 +1,66 @@
+#!/bin/bash
+# $1 is the number of times the experiments are run.
+# $2 is either -l or -s or neither to indicate the type of experiments to run (-l is early light, -s sensible subset, neither is full).
+# memory limit set to 16 GB. Change the memory limit accordingly to the RAM of your machine -> change the value of --memory-limit hard-coded in line 24
+if [ "$1" == "-h" ]; then
+  echo "Usage: `basename $0` [-h] n [first|chosen|all] [xs|s|m|l|xl]
+
+  where:
+    -h                 : show this help message and exit
+    n                  : number of times the experiments are run
+    [first|chosen|all] : option to use \"first\" (default) \"given\" 
+                         or \"all\" symmetries
+    [xs|s|m|l|xl]      : option to select size of model set (default is s) 
+    "
+
+  exit 0
+fi
+
+# Read arguments
+n="${1:-"1"}"
+workflow="${2:-"first-chosen"}"
+selection="${3:-s}"
+
+# Validate number 
+re='^[0-9]+$'
+if ! [[ $n =~ $re ]] ; then
+  echo "Error: n argument must be a number (use -h for help message)"
+  exit 1
+fi
+
+# Validate symmetries
+if [[ "$workflow" != "first-chosen" && "$workflow" != "first" && "$workflow" != "all" && "$workflow" != "chosen" ]]; then
+  echo "Error: symmetries argument must be: first-chosen, first, chosen, or all (use -h for help message)"
+  exit 1
+fi
+
+# Validate selected model set 
+if [[ "$selection" != "xs" && "$selection" != "s" && "$selection" != "m" && "$selection" != "l" && "$selection" != "xl" ]]; then
+  echo "Error: size of model set should be be:xs, s, m, l or xl (use -h for help message)"
+  exit 1
+fi
+
+# Create model copies
+for ((i=1; i<=n; i++)); do
+  rm -rf "models$i/"
+  cp -r models/ "models$i/"
+done
+
+
+echo "Running benchmark with options n=$n, workflow=$workflow and selection=$selection"
+
+# Run python processes
+for ((i=1; i<=n; i++)); do
+  python3 run.py \
+    --memory-limit=16 \
+    --selection="$selection" \
+    "models$i" \
+    --workflow="$workflow" \
+    "results-$i.yaml" \
+    "logging$i.log" 
+done
+wait
+
+rm jittyc_*
+
+echo "All done"

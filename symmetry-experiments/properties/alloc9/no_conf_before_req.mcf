@@ -1,0 +1,14 @@
+% There is no confirm without a request preceding it. 
+( 
+  [!(exists i : ClientId . (request(i)))*] 
+  mu Y .  [exists i : ClientId . confirm(i)] (mu Z. Z)
+)
+&&
+(
+  [true*] nu X . [exists i :ClientId . confirm(i)] 
+    (
+      [!(exists i : ClientId . (request(i)))*] 
+      mu Y .  [exists i : ClientId . confirm(i)] (mu Z. Z) 
+    )
+)
+    

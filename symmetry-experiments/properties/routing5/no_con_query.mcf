@@ -1,0 +1,6 @@
+% No two consecutive query actions occur without lookup actions inbetween.
+[true*]
+mu X.[exists i : ServerId . query(i)]
+mu Y.[(!lookup)*]
+mu Z.[exists i : ServerId . query(i)]
+(mu F . F)

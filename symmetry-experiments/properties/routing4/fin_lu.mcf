@@ -1,0 +1,2 @@
+% There are only finite stretches of lookup actions.
+nu X . mu Y . ([lookup] Y && [true]X) 

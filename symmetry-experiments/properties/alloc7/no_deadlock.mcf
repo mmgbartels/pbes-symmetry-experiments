@@ -1,0 +1,5 @@
+% This formula expresses that there is no deadlock for all reachable states.
+% Here the true constant has been replaces for a trivial fixed point, 
+% to make sure new equations are introduces. 
+
+[true*]<true>(nu X.X)

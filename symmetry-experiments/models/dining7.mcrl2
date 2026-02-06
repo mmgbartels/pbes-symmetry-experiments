@@ -1,0 +1,36 @@
+% This is a specification of the dining philosophers problem (sequential version).
+
+sort Phil = struct p1 | p2 | p3 | p4 | p5 | p6 | p7;
+     Fork = struct f1 | f2 | f3 | f4 | f5 | f6 | f7;
+
+map lf, rf: Phil -> Fork;
+eqn lf(p1) = f1;
+    lf(p2) = f2;
+    lf(p3) = f3;
+    lf(p4) = f4;
+    lf(p5) = f5;
+    lf(p6) = f6;
+    lf(p7) = f7;
+    rf(p1) = f7;
+    rf(p2) = f1;
+    rf(p3) = f2;
+    rf(p4) = f3;
+    rf(p5) = f4;
+    rf(p6) = f5;
+    rf(p7) = f6;
+
+act get, put, up, down, lock, free: Fork;
+    eat: Phil;
+
+proc P_Phil(p: Phil) =
+       (get(lf(p)).get(rf(p)) + get(rf(p)).get(lf(p))) . eat(p) .
+       (put(lf(p)).put(rf(p)) + put(rf(p)).put(lf(p))) . P_Phil(p);
+     P_Fork(f: Fork) = up(f) . down(f) . P_Fork(f);
+
+init allow ( { lock, free, eat },
+       comm( { get|up->lock, put|down->free },
+         P_Fork(f1) || P_Fork(f2) || P_Fork(f3) || P_Fork(f4) || P_Fork(f5) ||
+         P_Fork(f6) || P_Fork(f7) || 
+         P_Phil(p1) || P_Phil(p2) || P_Phil(p3) || P_Phil(p4) || P_Phil(p5) || 
+         P_Phil(p6) || P_Phil(p7)
+     ));

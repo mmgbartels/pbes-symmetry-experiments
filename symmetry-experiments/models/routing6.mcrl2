@@ -1,0 +1,50 @@
+sort
+  ServerId = struct s1 | s2 | s3 | s4 | s5 | s6;
+  
+act
+  c_req,s_req,req : ServerId;
+  c_resp,s_resp,resp : ServerId;
+  s_query, db_query, query : ServerId;
+  s_result, db_result, result : ServerId;
+  lose_request, lose_response;
+  lookup, internal;
+
+map constfalse: ServerId -> Bool;
+var i : ServerId;
+eqn constfalse(i) = false;
+
+proc Client(talkingto : ServerId -> Bool) =
+sum s : ServerId . (!talkingto(s)) -> c_req(s) . Client(talkingto[s -> true]) +
+sum s : ServerId . (talkingto(s)) ->  c_resp(s) . Client(talkingto[s -> false]) ;
+
+proc Database(talkingto : ServerId -> Bool) = 
+sum s : ServerId . (!talkingto(s)) -> db_query(s) . Lookup(talkingto[s -> true],0) +
+sum s : ServerId . (talkingto(s)) -> db_result(s). Database(talkingto[s -> false]) ;
+
+map N:Nat;
+eqn N=10;     
+
+proc Lookup(talkingto : ServerId -> Bool, n : Nat) =
+(n < N) -> lookup . Lookup(talkingto, n+1) +
+(n == N) -> Database(talkingto) ;
+
+proc Server(s: ServerId,b : Bool) =
+s_req(s). ( internal . s_query(s) . Server(s,true) +
+            internal . lose_request . Server(s,b)) +
+s_result(s) . ( internal . s_resp(s) . Server(s, false) +
+                internal . lose_response . Server(s,b));
+
+init allow( { req, resp, query, result, lose_request, lose_response, lookup, internal },
+    comm( { c_req|s_req -> req,
+            c_resp|s_resp -> resp,
+            s_query|db_query -> query, 
+            s_result|db_result -> result },
+          Client(constfalse) || Database(constfalse) 
+          || Server(s1,false) 
+          || Server(s2,false) 
+          || Server(s3,false) 
+          || Server(s4,false) 
+          || Server(s5,false) 
+          || Server(s6,false) 
+      ));
+

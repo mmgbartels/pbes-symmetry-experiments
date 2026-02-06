@@ -1,0 +1,2 @@
+% There are only finite stretches of calculate actions.
+nu X . mu Y . ([exists n : Nat . calculate(n)] Y && [true]X) 

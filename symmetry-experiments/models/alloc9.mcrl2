@@ -1,0 +1,38 @@
+sort
+  ClientId = struct c1 | c2 | c3 | c4 | c5 | c6 | c7 | c8 | c9;
+  
+act
+  c_request, a_request, request : ClientId;
+  c_confirm, a_confirm, confirm : ClientId;
+  wait: ClientId;
+  calculate : Nat;
+
+map N:Nat;
+eqn N=5;     
+
+proc Client(i: ClientId, r: Bool, n: Nat) = 
+    (!r) -> c_request(i) . Client(i,true,n) +
+    (r && n < N) -> wait(i) . Client(i,r,n+1) +
+    (r && n == N) -> c_confirm(i) . Client(i,false,0);
+
+proc ResourceAllocator(busy: Bool, n : Nat) =
+  sum c : ClientId . a_request(c) . ResourceAllocator(true,n) +
+  (busy && n < N) -> calculate(n) . ResourceAllocator(busy,n+1) +
+  (busy && n == N) -> sum c: ClientId . a_confirm(c) . ResourceAllocator(false,0) ;
+
+
+init allow( { request, confirm, wait, calculate},
+    comm( { c_request|a_request -> request,
+            c_confirm|a_confirm -> confirm},
+        ResourceAllocator(false,0) 
+        || Client(c1,false,0)
+        || Client(c2,false,0)
+        || Client(c3,false,0)
+        || Client(c4,false,0)
+        || Client(c5,false,0)
+        || Client(c6,false,0)
+        || Client(c7,false,0)
+        || Client(c8,false,0)
+        || Client(c9,false,0)
+      ));
+
