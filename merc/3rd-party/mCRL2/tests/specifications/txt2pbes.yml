@@ -1,0 +1,14 @@
+nodes:
+  l1:
+    type: pbesspec
+  l2:
+    type: pbes
+
+tools:
+  t1:
+    input: [l1]
+    output: [l2]
+    args: []
+    name: txt2pbes
+result: |
+  result = True

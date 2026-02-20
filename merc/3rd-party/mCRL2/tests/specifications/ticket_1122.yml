@@ -1,0 +1,22 @@
+nodes:
+  l1:
+    type: mcrl2
+  l2:
+    type: lps
+  l3:
+    type: text
+
+tools:
+  t1:
+    input: [l1]
+    output: [l2]
+    args: []
+    name: txt2lps
+  t2:
+    input: [l2]
+    output: [l3]
+    args: []
+    name: lpspp
+
+result: |
+  result = l3.value.find('v = v') != -1
