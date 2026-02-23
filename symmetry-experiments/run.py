@@ -17,10 +17,8 @@ _TIMEOUTSCRIPT = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), "timeout")
 
 # Path to MCRL2
-mcrl2_path = os.path.join(os.path.dirname(os.path.realpath(
-    __file__)), '../../../mcrl2experimentalinstall/mCRL2/stage/bin/')
-mcrl2_merc_path = "../../../mcrl2merc/merc/tools/mcrl2/target/release/"
-
+mcrl2_path = "../build/stage/bin/"
+mcrl2_merc_path = "../merc/tools/mcrl2/target/release/"
 # path to folder 'properties'
 prop_path = os.path.abspath(os.path.join(
     os.path.split(__file__)[0], 'properties'))
