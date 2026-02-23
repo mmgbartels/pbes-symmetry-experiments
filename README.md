@@ -22,10 +22,27 @@ To run the experiments locally the following tools have to be installed.
 - mCRL2: the folder  `mCRL2` contains the source code for the mCRL2 version used. This can be build using the [build instruction](https://mcrl2.org/web/developer_manual/build_instructions/instructions.html) on the mCRL2 web page.  
 - MERC: the folder `merc` contains the source code of the MERC tool, that is used for symmetry detection. This can be build using the [build instruction](https://github.com/MERCorg/merc) on the designated repository. 
 - GAP: This can be installed following the installation steps on the DAP-webpage(https://www.gap-system.org/install/). Note: our tool was developed using GAP version 4.11.1. This is the version that is installed with ```apt-get install gap``` on Ubuntu 22.04. 
+- Python: when running the scripts it is assumed that Python can be called using ``python3``.
 
 When the tools are installed, the paths variables `mcrl2_path` and `mcrl2_merc_path` should be specified in the ```run.py``` script.
 
 
 ## Usage
-In the 
+In the `experiments` folder the bash script ```run``` can be used to carry out the benchmarks. This script is used as follows. 
+
+```
+./run  [-h] n [first-chosen|first|chosen|all] [xs|s|m|l|xl]
+
+    -h                 : show this help message and exit
+    n                  : number of times the experiments are run
+    [first|chosen|all] : option to use \"first-chosen\" (default), 
+                        \"first\", \"chosen\" or \"all\" symmetries
+    [xs|s|m|l|xl]      : option to select size of model set (default is s)
+```
+
+A \"kick-the-tires\" can be performed running ``./run 1 first-chosen``
+An example of a medium test set is ``./run 3 first-chosen m``
+To obtain the results shown in the paper we ran ``./run 5 first-chosen l``
+
+After a run is done, the results will be stored in the file `result-n.yml`, where `n` stands for the run number. 
 

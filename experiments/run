@@ -3,13 +3,13 @@
 # $2 is either -l or -s or neither to indicate the type of experiments to run (-l is early light, -s sensible subset, neither is full).
 # memory limit set to 16 GB. Change the memory limit accordingly to the RAM of your machine -> change the value of --memory-limit hard-coded in line 24
 if [ "$1" == "-h" ]; then
-  echo "Usage: `basename $0` [-h] n [first|chosen|all] [xs|s|m|l|xl]
+  echo "Usage: `basename $0` [-h] n [first-chosen|first|chosen|all] [xs|s|m|l|xl]
 
   where:
     -h                 : show this help message and exit
     n                  : number of times the experiments are run
-    [first|chosen|all] : option to use \"first\" (default) \"given\" 
-                         or \"all\" symmetries
+    [first|chosen|all] : option to use \"first-chosen\" (default), 
+                        \"first\", \"chosen\" or \"all\" symmetries
     [xs|s|m|l|xl]      : option to select size of model set (default is s) 
     "
 
