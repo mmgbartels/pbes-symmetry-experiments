@@ -33,11 +33,11 @@ In the `experiments` folder the bash script ```run``` can be used to carry out t
 ```
 ./run [-h] n [first-chosen|first|chosen|all] [xs|s|m|l|xl]
 
-    -h                 : show this help message and exit
-    n                  : number of times the experiments are run
+    -h                              : show this help message and exit
+    n                               : number of times the experiments are run
     [first-chosen|first|chosen|all] : option to use \"first-chosen\" (default), 
-                        \"first\", \"chosen\" or \"all\" symmetries
-    [xs|s|m|l|xl]      : option to select size of model set (default is s)
+                                      \"first\", \"chosen\" or \"all\" symmetries
+    [xs|s|m|l|xl]                   : option to select size of model set (default is s)
 ```
 
 A \"kick-the-tires\" can be performed running ``./run 1 first-chosen xs``
