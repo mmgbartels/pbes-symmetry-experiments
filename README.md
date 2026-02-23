@@ -40,7 +40,7 @@ In the `experiments` folder the bash script ```run``` can be used to carry out t
     [xs|s|m|l|xl]      : option to select size of model set (default is s)
 ```
 
-A \"kick-the-tires\" can be performed running ``./run 1 first-chosen``
+A \"kick-the-tires\" can be performed running ``./run 1 first-chosen xs``
 
 An example of a medium test set is ``./run 3 first-chosen m``
 
