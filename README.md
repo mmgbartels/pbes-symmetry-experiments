@@ -48,4 +48,4 @@ To obtain the results shown in the paper we ran ``./run 5 first-chosen l``
 
 After a run is done, the results will be stored in files `result-n.yml`, where `n` stands for the run number. These can be provided as input to the script `table.py`. This prints a table of the results, produces a latex file `table.tex` (which represents the table in the paper) and a csv file `table.csv`. To print the table for the \"kick-the-tires\" run, execute ``python3 table.py result-1.yml``. For cases with multiple runs, execute``python3 table.py result-1.yml ... result-n.yml``.
 
-The YAML files for the runs used for the table in the paper are provided in the `resulst` folder. Obtain the numbers from the paper, one can run ``python3 table.py results/results-l*``
+The YAML files for the runs used for the table in the paper are provided in the `results` folder. Obtain the numbers from the paper, one can run ``python3 table.py results/results-l*``
