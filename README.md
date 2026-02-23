@@ -27,6 +27,5 @@ When the tools are installed, the paths variables `mcrl2_path` and `mcrl2_merc_p
 
 
 ## Usage
-
-
+In the 
 
