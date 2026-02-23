@@ -7,7 +7,7 @@ This repository consists of:
 - A benchmark set of models, properties and symmetries 
 - Some run scripts to obtain the results and generate tables
 
-An artefact in the fjkorm of a VM image (OVA) is available in which the 
+An artefact in the form of a VM image (OVA) is available in which the 
 relevant tools have been set up. (The link to this artefact will be provided shortly)
 
 
@@ -17,5 +17,8 @@ To run the experiments locally the following tools have to be installed.
 - MERC: the folder `merc` contains the source code of the MERC tool, that is used for symmetry detection. This can be build using the [build instruction](https://github.com/MERCorg/merc) on the designated repository. 
 - GAP: This can be installed following the installation steps on the DAP-webpage(https://www.gap-system.org/install/). Note: our tool was developed using GAP version 4.11.1. This is the version that is installed with ```apt-get install gap``` on Ubuntu 22.04. 
 
+When the tools are installed, the paths to the executables should be specified in the ```run.py``` script.
 ## Usage
+
+
 

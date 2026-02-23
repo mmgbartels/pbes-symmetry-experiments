@@ -17,8 +17,9 @@ _TIMEOUTSCRIPT = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), "timeout")
 
 # Path to MCRL2
-mcrl2_Path = os.path.join(os.path.dirname(os.path.realpath(
+mcrl2_path = os.path.join(os.path.dirname(os.path.realpath(
     __file__)), '../../../mcrl2experimentalinstall/mCRL2/stage/bin/')
+mcrl2_merc_path = "../../../mcrl2merc/merc/tools/mcrl2/target/release/"
 
 # path to folder 'properties'
 prop_path = os.path.abspath(os.path.join(
@@ -356,7 +357,7 @@ def run_command_2(mcrl2_path, tool, options, input_file, input_file2, output_fil
     return data
 
 
-def mcrl2_to_lps(dirname, root, mcrl2=mcrl2_Path):
+def mcrl2_to_lps(dirname, root, mcrl2=mcrl2_path):
     mcrl2file = mcrl2_filepath(dirname, root)
     lpsfile = lps_filepath(dirname, root)
 
@@ -370,7 +371,7 @@ def mcrl2_to_lps(dirname, root, mcrl2=mcrl2_Path):
 
 # This version of mcrl22lps uses lpssuminst, lpsfununfold and lpsrewr
 # for for models that use sums and function types.
-def mcrl2_to_lps_suminst_fununfold(dirname, root, mcrl2=mcrl2_Path):
+def mcrl2_to_lps_suminst_fununfold(dirname, root, mcrl2=mcrl2_path):
     mcrl2file = mcrl2_filepath(dirname, root)
     lpsfiletmp = lps_filepath(dirname, root, "tmp")
     lpsfile = lps_filepath(dirname, root)
@@ -391,7 +392,7 @@ def mcrl2_to_lps_suminst_fununfold(dirname, root, mcrl2=mcrl2_Path):
     return data
 
 
-def lps_to_pbes(dirname, dirname2, root, property_name, mcrl2=mcrl2_Path, hint=None):
+def lps_to_pbes(dirname, dirname2, root, property_name, mcrl2=mcrl2_path, hint=None):
     lpsfile = lps_filepath(dirname, root)
     mcffile = property_filepath(dirname2, property_name)
     pbesfile = pbes_filepath(dirname, root, property_name)
@@ -412,7 +413,7 @@ def lps_to_pbes(dirname, dirname2, root, property_name, mcrl2=mcrl2_Path, hint=N
     return lps2pbesdata
 
 
-def pbes_rewr(dirname, dirname2, root, property_name, mcrl2=mcrl2_Path, hint=None):
+def pbes_rewr(dirname, dirname2, root, property_name, mcrl2=mcrl2_path, hint=None):
     pbesfile = pbes_filepath(dirname, root, property_name)
     pbesfiletmp = pbes_filepath(dirname, root, property_name, "tmp")
 
@@ -434,8 +435,7 @@ def pbes_rewr(dirname, dirname2, root, property_name, mcrl2=mcrl2_Path, hint=Non
     return data
 
 
-def pbes_symmetry(dirname, root, property_name, mcrl2=mcrl2_Path, hint=None):
-    mcrl2mercpath = "../../../mcrl2merc/merc/tools/mcrl2/target/release/"
+def pbes_symmetry(dirname, root, property_name, mcrl2=mcrl2_path, hint=None):
     pbesfile = pbes_filepath(dirname, root, property_name)
     data = {}
     logging.info(
@@ -576,7 +576,7 @@ def main():
             if os.path.exists(loggingfile):
                 os.remove(loggingfile)
             logging.basicConfig(filename=loggingfile, level=logging.INFO)
-            logging.info(format(mcrl2_Path))
+            logging.info(format(mcrl2_path))
             print(f"The logging file is: {loggingfile}")
     else:
         print("No folder path provided.")
@@ -633,17 +633,17 @@ def main():
 
                 # # step 2 LPS2PBES
                 data[keys][p][format(hint)]["lps2pbes"] = lps_to_pbes(
-                    path, folder_prop, filename, p, mcrl2_Path, hint)
+                    path, folder_prop, filename, p, mcrl2_path, hint)
 
                 if p in REWRITEPROPERTIES:
                     data[keys][p][format(hint)]["pbesrewr"] = pbes_rewr(
-                        path, folder_prop, filename, p, mcrl2_Path, hint)
+                        path, folder_prop, filename, p, mcrl2_path, hint)
 
                 # # step 3 PBESSYMMETRY
                 if hint != 'original':
                     if hint == 'first' or hint == 'all':
                         sym_res = pbes_symmetry(
-                            path, filename, p, mcrl2_Path, hint)
+                            path, filename, p, mcrl2_path, hint)
                         data[keys][p][format(hint)]["pbessymmetry"] = sym_res
                         symmetries = (sym_res or {}).get("symmetries")
                         if not symmetries:
@@ -664,10 +664,10 @@ def main():
                 # # step 4 PBESSOLVE
                 if hint == "original":
                     data[keys][p][format(hint)]["pbessolve"] = pbes_solve(
-                        path, filename, p, mcrl2_Path, hint)
+                        path, filename, p, mcrl2_path, hint)
                 else:
                     data[keys][p][format(hint)]["pbessolve"] = pbes_solve(
-                        path, filename, p, mcrl2_Path, hint, symmetry)
+                        path, filename, p, mcrl2_path, hint, symmetry)
 
     with open(yamlfile, 'w') as file:
         yaml.safe_dump(data, file, sort_keys=False, default_flow_style=False)
