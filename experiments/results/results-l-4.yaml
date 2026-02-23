@@ -1,0 +1,2723 @@
+dining6:
+  mcrl22lps:
+    options: -nf
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.mcrl2
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+    totaltime: 0.031
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 0.037
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 10.528
+        answer: 'false'
+        instantiation: 4.019
+        solving: 0.0
+        time: 4.019
+        generated_bes_equations: 25167
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 0.041
+      symmetry_used: '(0 1 2 3 4 5)(6 7 8 9 10 11)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11,
+          11 -> 6 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 7.228
+        answer: 'false'
+        instantiation: 0.815
+        solving: 0.0
+        time: 0.815
+        generated_bes_equations: 4261
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 0.037
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 54.37
+        symmetries:
+        - (0 1 2 3 4 5)(6 7 8 9 10 11)
+      symmetry_used: (0 1 2 3 4 5)(6 7 8 9 10 11)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11,
+          11 -> 6 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_deadlock.pbes
+        totaltime: 7.252
+        answer: 'false'
+        instantiation: 0.791
+        solving: 0.0
+        time: 0.791
+        generated_bes_equations: 4261
+  no_inf_eat:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining6/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 0.038
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 0.012
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 8.488
+        answer: 'true'
+        instantiation: 2.053
+        solving: 0.0
+        time: 2.053
+        generated_bes_equations: 17952
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining6/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 0.039
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 0.012
+      symmetry_used: '(0 1 2 3 4 5)(6 7 8 9 10 11)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11,
+          11 -> 6 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 6.895
+        answer: 'true'
+        instantiation: 0.456
+        solving: 0.0
+        time: 0.456
+        generated_bes_equations: 3036
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining6/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 0.01
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 39.419
+        symmetries:
+        - (0 1 2 3 4 5)(6 7 8 9 10 11)
+      symmetry_used: (0 1 2 3 4 5)(6 7 8 9 10 11)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11,
+          11 -> 6 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining6.no_inf_eat.pbes
+        totaltime: 6.948
+        answer: 'true'
+        instantiation: 0.486
+        solving: 0.0
+        time: 0.486
+        generated_bes_equations: 3036
+routing6:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+    totaltime: 0.015
+  fin_lu:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.fin_lu.pbes
+        totaltime: 0.047
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.fin_lu.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.fin_lu.pbes
+        totaltime: 0.051
+      symmetry_used: '(0 1 2 3 4 5)(8 9 10 11 12 13)(14 16 18 20 22 24)(15 17 19 21
+        23 25)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 8 -> 9, 9 -> 10, 10 -> 11, 11 -> 12, 12
+          -> 13, 13 -> 8, 14 -> 16, 16 -> 18, 18 -> 20, 20 -> 22, 22 -> 24, 24 ->
+          14, 15 -> 17, 17 -> 19, 19 -> 21, 21 -> 23, 23 -> 25, 25 -> 15 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.fin_lu.pbes
+        totaltime: 467.433
+        answer: 'true'
+        instantiation: 458.789
+        solving: 0.252
+        time: 459.041
+        generated_bes_equations: 2052928
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.fin_lu.pbes
+        totaltime: 0.043
+      pbessymmetry: {}
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        totaltime: 0.051
+      symmetry_used: '(0 1 2 3 4 5)(8 9 10 11 12 13)(14 16 18 20 22 24)(15 17 19 21
+        23 25)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 8 -> 9, 9 -> 10, 10 -> 11, 11 -> 12, 12
+          -> 13, 13 -> 8, 14 -> 16, 16 -> 18, 18 -> 20, 20 -> 22, 22 -> 24, 24 ->
+          14, 15 -> 17, 17 -> 19, 19 -> 21, 21 -> 23, 23 -> 25, 25 -> 15 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        totaltime: 817.654
+        answer: 'false'
+        instantiation: 808.965
+        solving: 0.342
+        time: 809.307
+        generated_bes_equations: 3020467
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        totaltime: 0.045
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        totaltime: 23.615
+        symmetries:
+        - (4 5)(12 13)(22 24)(23 25)
+      symmetry_used: (4 5)(12 13)(22 24)(23 25)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 4 -> 5, 5 -> 4,
+          12 -> 13, 13 -> 12, 22 -> 24, 24 -> 22, 23 -> 25, 25 -> 23 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_deadlock.pbes
+        times: timeout
+  no_con_query:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 0.046
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 0.015
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 0.046
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 0.015
+      symmetry_used: '(0 1 2 3 4 5)(8 9 10 11 12 13)(14 16 18 20 22 24)(15 17 19 21
+        23 25)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 0, 8 -> 9, 9 -> 10, 10 -> 11, 11 -> 12, 12
+          -> 13, 13 -> 8, 14 -> 16, 16 -> 18, 18 -> 20, 20 -> 22, 22 -> 24, 24 ->
+          14, 15 -> 17, 17 -> 19, 19 -> 21, 21 -> 23, 23 -> 25, 25 -> 15 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 463.298
+        answer: 'true'
+        instantiation: 455.017
+        solving: 0.164
+        time: 455.181
+        generated_bes_equations: 2287363
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing6/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 0.051
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 0.016
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 24.693
+        symmetries:
+        - (4 5)(12 13)(22 24)(23 25)
+      symmetry_used: (4 5)(12 13)(22 24)(23 25)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 4 -> 5, 5 -> 4,
+          12 -> 13, 13 -> 12, 22 -> 24, 24 -> 22, 23 -> 25, 25 -> 23 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing6.no_con_query.pbes
+        totaltime: 1436.098
+        answer: 'true'
+        instantiation: 1426.563
+        solving: 0.564
+        time: 1427.127
+        generated_bes_equations: 7468873
+dining3:
+  mcrl22lps:
+    options: -nf
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.mcrl2
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+    totaltime: 0.027
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 0.037
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 6.556
+        answer: 'false'
+        instantiation: 0.121
+        solving: 0.0
+        time: 0.121
+        generated_bes_equations: 246
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 0.047
+      symmetry_used: '(0 1 2)(3 4 5)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 3 -> 4, 4 -> 5, 5 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 6.525
+        answer: 'false'
+        instantiation: 0.111
+        solving: 0.0
+        time: 0.111
+        generated_bes_equations: 88
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 0.042
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 0.044
+        symmetries:
+        - (0 1 2)(3 4 5)
+      symmetry_used: (0 1 2)(3 4 5)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 3 -> 4, 4 -> 5, 5 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_deadlock.pbes
+        totaltime: 6.55
+        answer: 'false'
+        instantiation: 0.111
+        solving: 0.0
+        time: 0.111
+        generated_bes_equations: 88
+  no_inf_eat:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining3/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.01
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 6.52
+        answer: 'true'
+        instantiation: 0.112
+        solving: 0.0
+        time: 0.112
+        generated_bes_equations: 180
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining3/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.044
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.01
+      symmetry_used: '(0 1 2)(3 4 5)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 3 -> 4, 4 -> 5, 5 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 6.543
+        answer: 'true'
+        instantiation: 0.104
+        solving: 0.0
+        time: 0.104
+        generated_bes_equations: 64
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining3/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.037
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.011
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 0.034
+        symmetries:
+        - (0 1 2)(3 4 5)
+      symmetry_used: (0 1 2)(3 4 5)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 3 -> 4, 4 -> 5, 5 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining3.no_inf_eat.pbes
+        totaltime: 6.593
+        answer: 'true'
+        instantiation: 0.106
+        solving: 0.0
+        time: 0.106
+        generated_bes_equations: 64
+dining7:
+  mcrl22lps:
+    options: -nf
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.mcrl2
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+    totaltime: 0.037
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_deadlock.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_deadlock.pbes
+        totaltime: 28.632
+        answer: 'false'
+        instantiation: 22.127
+        solving: 0.007
+        time: 22.134
+        generated_bes_equations: 115271
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_deadlock.pbes
+        totaltime: 0.041
+      symmetry_used: '(0 1 2 3 4 5 6)(7 8 9 10 11 12 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 6, 6 -> 0, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11,
+          11 -> 12, 12 -> 13, 13 -> 7 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_deadlock.pbes
+        totaltime: 9.98
+        answer: 'false'
+        instantiation: 3.513
+        solving: 0.0
+        time: 3.513
+        generated_bes_equations: 16475
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_deadlock.pbes
+        totaltime: 0.038
+      pbessymmetry: {}
+  no_inf_eat:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining7/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 0.037
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 0.012
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 17.542
+        answer: 'true'
+        instantiation: 11.056
+        solving: 0.004
+        time: 11.06
+        generated_bes_equations: 82060
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining7/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 0.04
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 0.011
+      symmetry_used: '(0 1 2 3 4 5 6)(7 8 9 10 11 12 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 6, 6 -> 0, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11,
+          11 -> 12, 12 -> 13, 13 -> 7 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 8.257
+        answer: 'true'
+        instantiation: 1.845
+        solving: 0.0
+        time: 1.845
+        generated_bes_equations: 11728
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining7/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 0.038
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining7.no_inf_eat.pbes
+        totaltime: 0.01
+      pbessymmetry: {}
+routing4:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+    totaltime: 0.015
+  fin_lu:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 0.042
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 19.479
+        answer: 'true'
+        instantiation: 11.796
+        solving: 0.005
+        time: 11.801
+        generated_bes_equations: 95656
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 0.042
+      symmetry_used: '(0 1 2 3)(6 7 8 9)(10 12 14 16)(11 13 15 17)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 6, 10 -> 12, 12 -> 14, 14 ->
+          16, 16 -> 10, 11 -> 13, 13 -> 15, 15 -> 17, 17 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 10.996
+        answer: 'true'
+        instantiation: 3.265
+        solving: 0.0
+        time: 3.265
+        generated_bes_equations: 24088
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 0.042
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 4.526
+        symmetries:
+        - (2 3)(8 9)(14 16)(15 17)
+      symmetry_used: (2 3)(8 9)(14 16)(15 17)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 3, 3 -> 2,
+          8 -> 9, 9 -> 8, 14 -> 16, 16 -> 14, 15 -> 17, 17 -> 15 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.fin_lu.pbes
+        totaltime: 14.364
+        answer: 'true'
+        instantiation: 6.578
+        solving: 0.002
+        time: 6.58
+        generated_bes_equations: 51808
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 0.041
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 28.601
+        answer: 'false'
+        instantiation: 20.807
+        solving: 0.008
+        time: 20.815
+        generated_bes_equations: 141738
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 0.045
+      symmetry_used: '(0 1 2 3)(6 7 8 9)(10 12 14 16)(11 13 15 17)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 6, 10 -> 12, 12 -> 14, 14 ->
+          16, 16 -> 10, 11 -> 13, 13 -> 15, 15 -> 17, 17 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 13.251
+        answer: 'false'
+        instantiation: 5.546
+        solving: 0.001
+        time: 5.547
+        generated_bes_equations: 35684
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 0.044
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 0.079
+        symmetries:
+        - (2 3)(8 9)(14 16)(15 17)
+      symmetry_used: (2 3)(8 9)(14 16)(15 17)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 3, 3 -> 2,
+          8 -> 9, 9 -> 8, 14 -> 16, 16 -> 14, 15 -> 17, 17 -> 15 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_deadlock.pbes
+        totaltime: 19.288
+        answer: 'false'
+        instantiation: 11.571
+        solving: 0.003
+        time: 11.574
+        generated_bes_equations: 76684
+  no_con_query:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.044
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.013
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 19.338
+        answer: 'true'
+        instantiation: 11.577
+        solving: 0.004
+        time: 11.581
+        generated_bes_equations: 105973
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.046
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.014
+      symmetry_used: '(0 1 2 3)(6 7 8 9)(10 12 14 16)(11 13 15 17)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 6, 10 -> 12, 12 -> 14, 14 ->
+          16, 16 -> 10, 11 -> 13, 13 -> 15, 15 -> 17, 17 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 10.875
+        answer: 'true'
+        instantiation: 3.102
+        solving: 0.0
+        time: 3.102
+        generated_bes_equations: 26683
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing4/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.045
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.016
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 0.106
+        symmetries:
+        - (2 3)(8 9)(14 16)(15 17)
+      symmetry_used: (2 3)(8 9)(14 16)(15 17)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 3, 3 -> 2,
+          8 -> 9, 9 -> 8, 14 -> 16, 16 -> 14, 15 -> 17, 17 -> 15 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing4.no_con_query.pbes
+        totaltime: 14.285
+        answer: 'true'
+        instantiation: 6.444
+        solving: 0.002
+        time: 6.446
+        generated_bes_equations: 57373
+mutex:
+  mcrl22lps:
+    options: -nf
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.mcrl2
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.lps
+    totaltime: 0.029
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/mutex/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 0.039
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 6.549
+        answer: 'true'
+        instantiation: 0.112
+        solving: 0.0
+        time: 0.112
+        generated_bes_equations: 125
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/mutex/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 0.045
+      symmetry_used: '(0 1)(2 3)(4 5)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 0,
+          2 -> 3, 3 -> 2, 4 -> 5, 5 -> 4 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 6.52
+        answer: 'true'
+        instantiation: 0.104
+        solving: 0.0
+        time: 0.104
+        generated_bes_equations: 64
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/mutex/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 0.042
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 0.032
+        symmetries:
+        - (0 1)(2 3)(4 5)
+      symmetry_used: (0 1)(2 3)(4 5)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 0,
+          2 -> 3, 3 -> 2, 4 -> 5, 5 -> 4 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/mutex.no_deadlock.pbes
+        totaltime: 6.536
+        answer: 'true'
+        instantiation: 0.107
+        solving: 0.0
+        time: 0.107
+        generated_bes_equations: 64
+alloc7:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+    totaltime: 0.012
+  no_conf_before_req:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.014
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.043
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.014
+      symmetry_used: '(2 4 6 8 10 12 14)(3 5 7 9 11 13 15)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 12, 12 -> 14, 14 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9
+          -> 11, 11 -> 13, 13 -> 15, 15 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 321.241
+        answer: 'true'
+        instantiation: 313.569
+        solving: 0.116
+        time: 313.685
+        generated_bes_equations: 1722487
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.044
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.014
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 0.096
+        symmetries:
+        - (12 14)(13 15)
+      symmetry_used: (12 14)(13 15)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 12 -> 14, 14 ->
+          12, 13 -> 15, 15 -> 13 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_conf_before_req.pbes
+        totaltime: 1188.487
+        answer: 'true'
+        instantiation: 1179.705
+        solving: 0.493
+        time: 1180.198
+        generated_bes_equations: 6876343
+  fin_calc:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        totaltime: 0.043
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        totaltime: 0.039
+      symmetry_used: '(2 4 6 8 10 12 14)(3 5 7 9 11 13 15)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 12, 12 -> 14, 14 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9
+          -> 11, 11 -> 13, 13 -> 15, 15 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        totaltime: 317.72
+        answer: 'true'
+        instantiation: 310.203
+        solving: 0.113
+        time: 310.316
+        generated_bes_equations: 1567166
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        totaltime: 0.044
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        totaltime: 4.044
+        symmetries:
+        - (12 14)(13 15)
+      symmetry_used: (12 14)(13 15)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 12 -> 14, 14 ->
+          12, 13 -> 15, 15 -> 13 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.fin_calc.pbes
+        totaltime: 1238.851
+        answer: 'true'
+        instantiation: 1230.355
+        solving: 0.425
+        time: 1230.78
+        generated_bes_equations: 6261740
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        totaltime: 0.044
+      symmetry_used: '(2 4 6 8 10 12 14)(3 5 7 9 11 13 15)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 12, 12 -> 14, 14 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9
+          -> 11, 11 -> 13, 13 -> 15, 15 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        totaltime: 575.817
+        answer: 'true'
+        instantiation: 567.998
+        solving: 0.191
+        time: 568.189
+        generated_bes_equations: 2350749
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        totaltime: 0.041
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        totaltime: 0.063
+        symmetries:
+        - (12 14)(13 15)
+      symmetry_used: (12 14)(13 15)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 12 -> 14, 14 ->
+          12, 13 -> 15, 15 -> 13 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc7.no_deadlock.pbes
+        times: timeout
+alloc5:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+    totaltime: 0.011
+  no_conf_before_req:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.039
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.013
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 34.07
+        answer: 'true'
+        instantiation: 26.786
+        solving: 0.012
+        time: 26.798
+        generated_bes_equations: 237799
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.044
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.013
+      symmetry_used: '(2 4 6 8 10)(3 5 7 9 11)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 11, 11 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 12.998
+        answer: 'true'
+        instantiation: 5.77
+        solving: 0.001
+        time: 5.771
+        generated_bes_equations: 47623
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.041
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.012
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 0.039
+        symmetries:
+        - (8 10)(9 11)
+      symmetry_used: (8 10)(9 11)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 8 -> 10, 10 -> 8,
+          9 -> 11, 11 -> 9 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_conf_before_req.pbes
+        totaltime: 22.907
+        answer: 'true'
+        instantiation: 15.662
+        solving: 0.006
+        time: 15.668
+        generated_bes_equations: 135511
+  fin_calc:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 0.043
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 35.049
+        answer: 'true'
+        instantiation: 27.808
+        solving: 0.013
+        time: 27.821
+        generated_bes_equations: 219734
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 0.044
+      symmetry_used: '(2 4 6 8 10)(3 5 7 9 11)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 11, 11 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 13.128
+        answer: 'true'
+        instantiation: 5.918
+        solving: 0.001
+        time: 5.919
+        generated_bes_equations: 44006
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 0.039
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 0.076
+        symmetries:
+        - (8 10)(9 11)
+      symmetry_used: (8 10)(9 11)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 8 -> 10, 10 -> 8,
+          9 -> 11, 11 -> 9 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.fin_calc.pbes
+        totaltime: 23.6
+        answer: 'true'
+        instantiation: 16.394
+        solving: 0.007
+        time: 16.401
+        generated_bes_equations: 125372
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 0.04
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 56.725
+        answer: 'true'
+        instantiation: 49.507
+        solving: 0.023
+        time: 49.53
+        generated_bes_equations: 329601
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 0.04
+      symmetry_used: '(2 4 6 8 10)(3 5 7 9 11)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 11, 11 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 17.395
+        answer: 'true'
+        instantiation: 10.123
+        solving: 0.002
+        time: 10.125
+        generated_bes_equations: 66009
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 0.042
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 0.035
+        symmetries:
+        - (8 10)(9 11)
+      symmetry_used: (8 10)(9 11)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 8 -> 10, 10 -> 8,
+          9 -> 11, 11 -> 9 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc5.no_deadlock.pbes
+        totaltime: 35.365
+        answer: 'true'
+        instantiation: 28.122
+        solving: 0.01
+        time: 28.132
+        generated_bes_equations: 188058
+routing3:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+    totaltime: 0.013
+  fin_lu:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 8.537
+        answer: 'true'
+        instantiation: 0.868
+        solving: 0.0
+        time: 0.868
+        generated_bes_equations: 7960
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 0.045
+      symmetry_used: '(0 1 2)(5 6 7)(8 10 12)(9 11 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 5 -> 6, 6 -> 7, 7 -> 5, 8 -> 10, 10 -> 12, 12 -> 8, 9 -> 11, 11
+          -> 13, 13 -> 9 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 8.105
+        answer: 'true'
+        instantiation: 0.37
+        solving: 0.0
+        time: 0.37
+        generated_bes_equations: 2680
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 0.049
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 0.103
+        symmetries:
+        - (1 2)(6 7)(10 12)(11 13)
+      symmetry_used: (1 2)(6 7)(10 12)(11 13)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 1 -> 2, 2 -> 1,
+          6 -> 7, 7 -> 6, 10 -> 12, 12 -> 10, 11 -> 13, 13 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.fin_lu.pbes
+        totaltime: 8.196
+        answer: 'true'
+        instantiation: 0.508
+        solving: 0.0
+        time: 0.508
+        generated_bes_equations: 4288
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 0.045
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 8.986
+        answer: 'false'
+        instantiation: 1.319
+        solving: 0.0
+        time: 1.319
+        generated_bes_equations: 11822
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 0.049
+      symmetry_used: '(0 1 2)(5 6 7)(8 10 12)(9 11 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 5 -> 6, 6 -> 7, 7 -> 5, 8 -> 10, 10 -> 12, 12 -> 8, 9 -> 11, 11
+          -> 13, 13 -> 9 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 8.246
+        answer: 'false'
+        instantiation: 0.55
+        solving: 0.0
+        time: 0.55
+        generated_bes_equations: 3980
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 0.044
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 0.049
+        symmetries:
+        - (1 2)(6 7)(10 12)(11 13)
+      symmetry_used: (1 2)(6 7)(10 12)(11 13)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 1 -> 2, 2 -> 1,
+          6 -> 7, 7 -> 6, 10 -> 12, 12 -> 10, 11 -> 13, 13 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_deadlock.pbes
+        totaltime: 8.448
+        answer: 'false'
+        instantiation: 0.744
+        solving: 0.0
+        time: 0.744
+        generated_bes_equations: 6359
+  no_con_query:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.044
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.014
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 8.498
+        answer: 'true'
+        instantiation: 0.806
+        solving: 0.0
+        time: 0.806
+        generated_bes_equations: 8773
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.051
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.014
+      symmetry_used: '(0 1 2)(5 6 7)(8 10 12)(9 11 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 0, 5 -> 6, 6 -> 7, 7 -> 5, 8 -> 10, 10 -> 12, 12 -> 8, 9 -> 11, 11
+          -> 13, 13 -> 9 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 8.024
+        answer: 'true'
+        instantiation: 0.357
+        solving: 0.0
+        time: 0.357
+        generated_bes_equations: 2953
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing3/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.041
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.014
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 0.059
+        symmetries:
+        - (1 2)(6 7)(10 12)(11 13)
+      symmetry_used: (1 2)(6 7)(10 12)(11 13)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 1 -> 2, 2 -> 1,
+          6 -> 7, 7 -> 6, 10 -> 12, 12 -> 10, 11 -> 13, 13 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing3.no_con_query.pbes
+        totaltime: 8.139
+        answer: 'true'
+        instantiation: 0.467
+        solving: 0.0
+        time: 0.467
+        generated_bes_equations: 4723
+dining5:
+  mcrl22lps:
+    options: -nf
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.mcrl2
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+    totaltime: 0.031
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 0.039
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 7.241
+        answer: 'false'
+        instantiation: 0.823
+        solving: 0.0
+        time: 0.823
+        generated_bes_equations: 5464
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 0.036
+      symmetry_used: '(0 1 2 3 4)(5 6 7 8 9)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 5 -> 6, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 6.702
+        answer: 'false'
+        instantiation: 0.268
+        solving: 0.0
+        time: 0.268
+        generated_bes_equations: 1100
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 0.042
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 1.53
+        symmetries:
+        - (0 1 2 3 4)(5 6 7 8 9)
+      symmetry_used: (0 1 2 3 4)(5 6 7 8 9)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 5 -> 6, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_deadlock.pbes
+        totaltime: 6.68
+        answer: 'false'
+        instantiation: 0.269
+        solving: 0.0
+        time: 0.269
+        generated_bes_equations: 1100
+  no_inf_eat:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining5/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 0.012
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 6.89
+        answer: 'true'
+        instantiation: 0.481
+        solving: 0.0
+        time: 0.481
+        generated_bes_equations: 3916
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining5/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 0.04
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 0.01
+      symmetry_used: '(0 1 2 3 4)(5 6 7 8 9)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 5 -> 6, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 6.561
+        answer: 'true'
+        instantiation: 0.173
+        solving: 0.0
+        time: 0.173
+        generated_bes_equations: 788
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining5/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 0.04
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 0.012
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 1.109
+        symmetries:
+        - (0 1 2 3 4)(5 6 7 8 9)
+      symmetry_used: (0 1 2 3 4)(5 6 7 8 9)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 5 -> 6, 6 -> 7, 7 -> 8, 8 -> 9, 9 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining5.no_inf_eat.pbes
+        totaltime: 6.682
+        answer: 'true'
+        instantiation: 0.18
+        solving: 0.0
+        time: 0.18
+        generated_bes_equations: 788
+routing7:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+    totaltime: 0.014
+  fin_lu:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.fin_lu.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.fin_lu.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.fin_lu.pbes
+        totaltime: 0.045
+      symmetry_used: '(0 1 2 3 4 5 6)(9 10 11 12 13 14 15)(16 18 20 22 24 26 28)(17
+        19 21 23 25 27 29)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 6, 6 -> 0, 9 -> 10, 10 -> 11, 11 -> 12, 12
+          -> 13, 13 -> 14, 14 -> 15, 15 -> 9, 16 -> 18, 18 -> 20, 20 -> 22, 22 ->
+          24, 24 -> 26, 26 -> 28, 28 -> 16, 17 -> 19, 19 -> 21, 21 -> 23, 23 -> 25,
+          25 -> 27, 27 -> 29, 29 -> 17 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.fin_lu.pbes
+        times: timeout
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.fin_lu.pbes
+        totaltime: 0.044
+      pbessymmetry: {}
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        totaltime: 0.053
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        totaltime: 0.048
+      symmetry_used: '(0 1 2 3 4 5 6)(9 10 11 12 13 14 15)(16 18 20 22 24 26 28)(17
+        19 21 23 25 27 29)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 6, 6 -> 0, 9 -> 10, 10 -> 11, 11 -> 12, 12
+          -> 13, 13 -> 14, 14 -> 15, 15 -> 9, 16 -> 18, 18 -> 20, 20 -> 22, 22 ->
+          24, 24 -> 26, 26 -> 28, 28 -> 16, 17 -> 19, 19 -> 21, 21 -> 23, 23 -> 25,
+          25 -> 27, 27 -> 29, 29 -> 17 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        times: timeout
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        totaltime: 0.045
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        totaltime: 1265.89
+        symmetries:
+        - (5 6)(14 15)(26 28)(27 29)
+      symmetry_used: (5 6)(14 15)(26 28)(27 29)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 5 -> 6, 6 -> 5,
+          14 -> 15, 15 -> 14, 26 -> 28, 28 -> 26, 27 -> 29, 29 -> 27 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_deadlock.pbes
+        times: timeout
+  no_con_query:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 0.05
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 0.016
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        times: timeout
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 0.057
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 0.018
+      symmetry_used: '(0 1 2 3 4 5 6)(9 10 11 12 13 14 15)(16 18 20 22 24 26 28)(17
+        19 21 23 25 27 29)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 5, 5 -> 6, 6 -> 0, 9 -> 10, 10 -> 11, 11 -> 12, 12
+          -> 13, 13 -> 14, 14 -> 15, 15 -> 9, 16 -> 18, 18 -> 20, 20 -> 22, 22 ->
+          24, 24 -> 26, 26 -> 28, 28 -> 16, 17 -> 19, 19 -> 21, 21 -> 23, 23 -> 25,
+          25 -> 27, 27 -> 29, 29 -> 17 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        times: timeout
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing7/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 0.052
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 0.016
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        totaltime: 1094.09
+        symmetries:
+        - (5 6)(14 15)(26 28)(27 29)
+      symmetry_used: (5 6)(14 15)(26 28)(27 29)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 5 -> 6, 6 -> 5,
+          14 -> 15, 15 -> 14, 26 -> 28, 28 -> 26, 27 -> 29, 29 -> 27 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing7.no_con_query.pbes
+        times: timeout
+dining4:
+  mcrl22lps:
+    options: -nf
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.mcrl2
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+    totaltime: 0.032
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 0.037
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 6.698
+        answer: 'false'
+        instantiation: 0.222
+        solving: 0.0
+        time: 0.222
+        generated_bes_equations: 1157
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 0.039
+      symmetry_used: '(0 1 2 3)(4 5 6 7)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 4 -> 5, 5 -> 6, 6 -> 7, 7 -> 4 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 6.656
+        answer: 'false'
+        instantiation: 0.14
+        solving: 0.0
+        time: 0.14
+        generated_bes_equations: 307
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 0.035
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 0.094
+        symmetries:
+        - (0 1 2 3)(4 5 6 7)
+      symmetry_used: (0 1 2 3)(4 5 6 7)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 4 -> 5, 5 -> 6, 6 -> 7, 7 -> 4 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_deadlock.pbes
+        totaltime: 6.638
+        answer: 'false'
+        instantiation: 0.147
+        solving: 0.0
+        time: 0.147
+        generated_bes_equations: 307
+  no_inf_eat:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining4/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.038
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.01
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 6.61
+        answer: 'true'
+        instantiation: 0.152
+        solving: 0.0
+        time: 0.152
+        generated_bes_equations: 848
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining4/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.036
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.012
+      symmetry_used: '(0 1 2 3)(4 5 6 7)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 4 -> 5, 5 -> 6, 6 -> 7, 7 -> 4 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 6.59
+        answer: 'true'
+        instantiation: 0.126
+        solving: 0.0
+        time: 0.126
+        generated_bes_equations: 224
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/dining4/no_inf_eat.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.046
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.011
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 0.075
+        symmetries:
+        - (0 1 2 3)(4 5 6 7)
+      symmetry_used: (0 1 2 3)(4 5 6 7)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 0, 4 -> 5, 5 -> 6, 6 -> 7, 7 -> 4 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/dining4.no_inf_eat.pbes
+        totaltime: 6.528
+        answer: 'true'
+        instantiation: 0.117
+        solving: 0.0
+        time: 0.117
+        generated_bes_equations: 224
+alloc6:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+    totaltime: 0.012
+  no_conf_before_req:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.041
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.013
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 245.914
+        answer: 'true'
+        instantiation: 238.376
+        solving: 0.106
+        time: 238.482
+        generated_bes_equations: 1695751
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.012
+      symmetry_used: '(2 4 6 8 10 12)(3 5 7 9 11 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 12, 12 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 11, 11
+          -> 13, 13 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 48.993
+        answer: 'true'
+        instantiation: 41.739
+        solving: 0.018
+        time: 41.757
+        generated_bes_equations: 283631
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.043
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.012
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 0.049
+        symmetries:
+        - (10 12)(11 13)
+      symmetry_used: (10 12)(11 13)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 10 -> 12, 12 ->
+          10, 11 -> 13, 13 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_conf_before_req.pbes
+        totaltime: 144.248
+        answer: 'true'
+        instantiation: 136.866
+        solving: 0.067
+        time: 136.933
+        generated_bes_equations: 966775
+  fin_calc:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 0.045
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 248.736
+        answer: 'true'
+        instantiation: 241.232
+        solving: 0.09
+        time: 241.322
+        generated_bes_equations: 1553762
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 0.039
+      symmetry_used: '(2 4 6 8 10 12)(3 5 7 9 11 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 12, 12 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 11, 11
+          -> 13, 13 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 49.55
+        answer: 'true'
+        instantiation: 42.285
+        solving: 0.02
+        time: 42.305
+        generated_bes_equations: 259912
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 0.044
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 0.441
+        symmetries:
+        - (10 12)(11 13)
+      symmetry_used: (10 12)(11 13)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 10 -> 12, 12 ->
+          10, 11 -> 13, 13 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.fin_calc.pbes
+        totaltime: 145.863
+        answer: 'true'
+        instantiation: 138.497
+        solving: 0.053
+        time: 138.55
+        generated_bes_equations: 886748
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 0.049
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 444.331
+        answer: 'true'
+        instantiation: 436.589
+        solving: 0.181
+        time: 436.77
+        generated_bes_equations: 2330643
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 0.047
+      symmetry_used: '(2 4 6 8 10 12)(3 5 7 9 11 13)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 10, 10 -> 12, 12 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 11, 11
+          -> 13, 13 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 85.625
+        answer: 'true'
+        instantiation: 78.218
+        solving: 0.029
+        time: 78.247
+        generated_bes_equations: 389868
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc6/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 0.04
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 0.04
+        symmetries:
+        - (10 12)(11 13)
+      symmetry_used: (10 12)(11 13)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 10 -> 12, 12 ->
+          10, 11 -> 13, 13 -> 11 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc6.no_deadlock.pbes
+        totaltime: 262.225
+        answer: 'true'
+        instantiation: 254.589
+        solving: 0.106
+        time: 254.695
+        generated_bes_equations: 1330122
+alloc3:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+    totaltime: 0.011
+  no_conf_before_req:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.014
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 7.684
+        answer: 'true'
+        instantiation: 0.438
+        solving: 0.0
+        time: 0.438
+        generated_bes_equations: 4615
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.04
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.012
+      symmetry_used: '(2 4 6)(3 5 7)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 2, 3 -> 5, 5 -> 7, 7 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 7.477
+        answer: 'true'
+        instantiation: 0.211
+        solving: 0.0
+        time: 0.211
+        generated_bes_equations: 1591
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.04
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.012
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 0.037
+        symmetries:
+        - (4 6)(5 7)
+      symmetry_used: (4 6)(5 7)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 4 -> 6, 6 -> 4,
+          5 -> 7, 7 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_conf_before_req.pbes
+        totaltime: 7.616
+        answer: 'true'
+        instantiation: 0.308
+        solving: 0.0
+        time: 0.308
+        generated_bes_equations: 2623
+  fin_calc:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 7.644
+        answer: 'true'
+        instantiation: 0.456
+        solving: 0.0
+        time: 0.456
+        generated_bes_equations: 4358
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 0.038
+      symmetry_used: '(2 4 6)(3 5 7)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 2, 3 -> 5, 5 -> 7, 7 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 7.424
+        answer: 'true'
+        instantiation: 0.23
+        solving: 0.0
+        time: 0.23
+        generated_bes_equations: 1502
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 0.04
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 0.032
+        symmetries:
+        - (4 6)(5 7)
+      symmetry_used: (4 6)(5 7)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 4 -> 6, 6 -> 4,
+          5 -> 7, 7 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.fin_calc.pbes
+        totaltime: 7.583
+        answer: 'true'
+        instantiation: 0.322
+        solving: 0.0
+        time: 0.322
+        generated_bes_equations: 2480
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 0.046
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 7.929
+        answer: 'true'
+        instantiation: 0.691
+        solving: 0.0
+        time: 0.691
+        generated_bes_equations: 6537
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 0.04
+      symmetry_used: '(2 4 6)(3 5 7)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 2, 3 -> 5, 5 -> 7, 7 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 7.622
+        answer: 'true'
+        instantiation: 0.317
+        solving: 0.0
+        time: 0.317
+        generated_bes_equations: 2253
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc3/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 0.041
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 0.033
+        symmetries:
+        - (4 6)(5 7)
+      symmetry_used: (4 6)(5 7)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 4 -> 6, 6 -> 4,
+          5 -> 7, 7 -> 5 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc3.no_deadlock.pbes
+        totaltime: 7.653
+        answer: 'true'
+        instantiation: 0.46
+        solving: 0.0
+        time: 0.46
+        generated_bes_equations: 3720
+alloc4:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+    totaltime: 0.012
+  no_conf_before_req:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.04
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.013
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 10.255
+        answer: 'true'
+        instantiation: 3.092
+        solving: 0.0
+        time: 3.092
+        generated_bes_equations: 33223
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.048
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.014
+      symmetry_used: '(2 4 6 8)(3 5 7 9)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 8.089
+        answer: 'true'
+        instantiation: 0.889
+        solving: 0.0
+        time: 0.889
+        generated_bes_equations: 8503
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/no_conf_before_req.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.042
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.014
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 0.036
+        symmetries:
+        - (6 8)(7 9)
+      symmetry_used: (6 8)(7 9)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 6 -> 8, 8 -> 6,
+          7 -> 9, 9 -> 7 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_conf_before_req.pbes
+        totaltime: 9.004
+        answer: 'true'
+        instantiation: 1.804
+        solving: 0.0
+        time: 1.804
+        generated_bes_equations: 18919
+  fin_calc:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 0.041
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 10.448
+        answer: 'true'
+        instantiation: 3.237
+        solving: 0.0
+        time: 3.237
+        generated_bes_equations: 31010
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 0.044
+      symmetry_used: '(2 4 6 8)(3 5 7 9)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 8.171
+        answer: 'true'
+        instantiation: 0.949
+        solving: 0.0
+        time: 0.949
+        generated_bes_equations: 7940
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/fin_calc.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 0.044
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 0.04
+        symmetries:
+        - (6 8)(7 9)
+      symmetry_used: (6 8)(7 9)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 6 -> 8, 8 -> 6,
+          7 -> 9, 9 -> 7 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.fin_calc.pbes
+        totaltime: 9.163
+        answer: 'true'
+        instantiation: 1.921
+        solving: 0.0
+        time: 1.921
+        generated_bes_equations: 17684
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 0.043
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 12.895
+        answer: 'true'
+        instantiation: 5.672
+        solving: 0.001
+        time: 5.673
+        generated_bes_equations: 46515
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 0.04
+      symmetry_used: '(2 4 6 8)(3 5 7 9)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 2 -> 4, 4 -> 6,
+          6 -> 8, 8 -> 2, 3 -> 5, 5 -> 7, 7 -> 9, 9 -> 3 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 8.856
+        answer: 'true'
+        instantiation: 1.62
+        solving: 0.0
+        time: 1.62
+        generated_bes_equations: 11910
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/alloc4/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 0.043
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 0.034
+        symmetries:
+        - (6 8)(7 9)
+      symmetry_used: (6 8)(7 9)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 6 -> 8, 8 -> 6,
+          7 -> 9, 9 -> 7 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/alloc4.no_deadlock.pbes
+        totaltime: 10.519
+        answer: 'true'
+        instantiation: 3.273
+        solving: 0.0
+        time: 3.273
+        generated_bes_equations: 26526
+routing5:
+  mcrl22lps:
+    options: ''
+    input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.suminst.fununfold.lps
+    output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+    totaltime: 0.016
+  fin_lu:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 0.044
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 191.651
+        answer: 'true'
+        instantiation: 183.582
+        solving: 0.137
+        time: 183.719
+        generated_bes_equations: 1100920
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 0.047
+      symmetry_used: '(0 1 2 3 4)(7 8 9 10 11)(12 14 16 18 20)(13 15 17 19 21)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11, 11 -> 7, 12 ->
+          14, 14 -> 16, 16 -> 18, 18 -> 20, 20 -> 12, 13 -> 15, 15 -> 17, 17 -> 19,
+          19 -> 21, 21 -> 13 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 46.293
+        answer: 'true'
+        instantiation: 38.38
+        solving: 0.021
+        time: 38.401
+        generated_bes_equations: 220216
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/fin_lu.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 0.049
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 701.62
+        symmetries:
+        - (3 4)(10 11)(18 20)(19 21)
+      symmetry_used: (3 4)(10 11)(18 20)(19 21)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 3 -> 4, 4 -> 3,
+          10 -> 11, 11 -> 10, 18 -> 20, 20 -> 18, 19 -> 21, 21 -> 19 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.fin_lu.pbes
+        totaltime: 108.574
+        answer: 'true'
+        instantiation: 100.673
+        solving: 0.07
+        time: 100.743
+        generated_bes_equations: 598288
+  no_deadlock:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 0.047
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 329.769
+        answer: 'false'
+        instantiation: 321.585
+        solving: 0.17
+        time: 321.755
+        generated_bes_equations: 1625559
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 0.051
+      symmetry_used: '(0 1 2 3 4)(7 8 9 10 11)(12 14 16 18 20)(13 15 17 19 21)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11, 11 -> 7, 12 ->
+          14, 14 -> 16, 16 -> 18, 18 -> 20, 20 -> 12, 13 -> 15, 15 -> 17, 17 -> 19,
+          19 -> 21, 21 -> 13 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 75.309
+        answer: 'false'
+        instantiation: 67.532
+        solving: 0.027
+        time: 67.559
+        generated_bes_equations: 325159
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/no_deadlock.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 0.044
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 0.67
+        symmetries:
+        - (3 4)(10 11)(18 20)(19 21)
+      symmetry_used: (3 4)(10 11)(18 20)(19 21)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 3 -> 4, 4 -> 3,
+          10 -> 11, 11 -> 10, 18 -> 20, 20 -> 18, 19 -> 21, 21 -> 19 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_deadlock.pbes
+        totaltime: 186.245
+        answer: 'false'
+        instantiation: 178.278
+        solving: 0.101
+        time: 178.379
+        generated_bes_equations: 882806
+  no_con_query:
+    original:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.051
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.014
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[0->0]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 186.232
+        answer: 'true'
+        instantiation: 178.276
+        solving: 0.086
+        time: 178.362
+        generated_bes_equations: 1223773
+    chosen:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.046
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.015
+      symmetry_used: '(0 1 2 3 4)(7 8 9 10 11)(12 14 16 18 20)(13 15 17 19 21)
+
+        '
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 0 -> 1, 1 -> 2,
+          2 -> 3, 3 -> 4, 4 -> 0, 7 -> 8, 8 -> 9, 9 -> 10, 10 -> 11, 11 -> 7, 12 ->
+          14, 14 -> 16, 16 -> 18, 18 -> 20, 20 -> 12, 13 -> 15, 15 -> 17, 17 -> 19,
+          19 -> 21, 21 -> 13 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 45.85
+        answer: 'true'
+        instantiation: 37.993
+        solving: 0.016
+        time: 38.009
+        generated_bes_equations: 244789
+    first:
+      lps2pbes:
+        options: -v-f
+        mcf_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/properties/routing5/no_con_query.mcf
+        lps_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.lps
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.052
+      pbesrewr:
+        options: -v-pquantifier-all
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.tmp.pbes
+        output_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.016
+      pbessymmetry:
+        options: symmetry--partition-data-sorts--partition-data-updates
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 0.843
+        symmetries:
+        - (3 4)(10 11)(18 20)(19 21)
+      symmetry_used: (3 4)(10 11)(18 20)(19 21)
+      pbessolve:
+        options: -v-rjittyc--long-strategy=0--timings--symmetry=[ 3 -> 4, 4 -> 3,
+          10 -> 11, 11 -> 10, 18 -> 20, 20 -> 18, 19 -> 21, 21 -> 19 ]--gap-path=/usr/bin/gap
+        input_file: /home/tue20244606/Documents/phd/mcrl2files/benchmarktest/symmetry-experiments/models2/routing5.no_con_query.pbes
+        totaltime: 107.85
+        answer: 'true'
+        instantiation: 99.957
+        solving: 0.044
+        time: 100.001
+        generated_bes_equations: 664873
