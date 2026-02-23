@@ -19,8 +19,8 @@ except ImportError:
 # -----------------------
 
 def latex_escape(text: Any) -> str:
-    if text is None or text == "":
-        return "-"
+    if text is None:
+        return ""
     s = str(text)
     replacements = {
         "\\": r"\textbackslash{}",
@@ -34,41 +34,22 @@ def latex_escape(text: Any) -> str:
     }
     for k, v in replacements.items():
         s = s.replace(k, v)
-    return s if s.strip() else "-"
+    return s
 
 
 def format_float(x: Any, digits: int = 3) -> str:
-    """General float formatter for non-time fields. '-' for missing."""
     if x is None or x == "":
-        return "-"
+        return ""
     try:
         f = float(x)
-        txt = f"{f:.{digits}f}".rstrip("0").rstrip(".")
-        return txt if txt else "-"
+        return f"{f:.{digits}f}".rstrip("0").rstrip(".")
     except (ValueError, TypeError):
-        return "-"
-
-
-def format_time(x: Any, digits: int = 3) -> str:
-    """
-    TIMEOUT-AWARE FORMATTER:
-    - If x is None or "" => timeout => 't-o'
-    - If number exists => formatted number
-    - If broken value => '-'
-    """
-    if x is None or x == "":
-        return "t-o"
-    try:
-        f = float(x)
-        txt = f"{f:.{digits}f}".rstrip("0").rstrip(".")
-        return txt if txt else "t-o"
-    except (ValueError, TypeError):
-        return "-"
+        return str(x)
 
 
 def format_answer(ans: Any) -> str:
-    if ans is None or ans == "":
-        return "-"
+    if ans is None:
+        return ""
     s = str(ans).lower()
     if s == "true":
         return r"$\checkmark$"
@@ -93,8 +74,10 @@ def permutation_size_str(perm: str) -> str:
     parts = []
     for size in sorted(count.keys()):
         if count[size] == 1:
+            # wrap single sizes in math mode
             parts.append(f"${size}$")
         else:
+            # wrap exponent form in math mode
             parts.append(f"${size}^{count[size]}$")
 
     return " * ".join(parts)
@@ -115,7 +98,7 @@ def collect_rows_from_yaml(data: Dict[str, Any]) -> List[Dict[str, Any]]:
             if not isinstance(prop_content, dict):
                 continue
 
-            # Original
+            # -------- Original --------
             original = prop_content.get("original", {})
             if isinstance(original, dict):
                 pb = original.get("pbessolve")
@@ -130,13 +113,14 @@ def collect_rows_from_yaml(data: Dict[str, Any]) -> List[Dict[str, Any]]:
                         "solving": pb.get("solving"),
                     })
 
-            # First
+            # -------- First --------
             first = prop_content.get("first", {})
             if isinstance(first, dict):
                 symmetry_used = first.get("symmetry_used", "")
                 pb = first.get("pbessolve")
                 sym_func = first.get("pbessymmetry", {})
-                detection = sym_func.get("totaltime") if isinstance(sym_func, dict) else None
+                detection = sym_func.get("totaltime") if isinstance(
+                    sym_func, dict) else None
 
                 if isinstance(pb, dict):
                     rows.append({
@@ -151,7 +135,7 @@ def collect_rows_from_yaml(data: Dict[str, Any]) -> List[Dict[str, Any]]:
                         "symmetry_detection": detection
                     })
 
-            # Chosen
+            # -------- Chosen --------
             chosen = prop_content.get("chosen", {})
             if isinstance(chosen, dict):
                 symmetry_used = chosen.get("symmetry_used", "")
@@ -172,7 +156,7 @@ def collect_rows_from_yaml(data: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 
 # -----------------------
-# Aggregation (NEW FORMAT)
+# Aggregation
 # -----------------------
 
 def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str, Any]]:
@@ -181,8 +165,9 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
     agg = defaultdict(lambda: {
         "original": {"answers": set(), "bes_eqs": set(), "instantiation": [], "solving": []},
         "first": {"answers": set(), "bes_eqs": set(), "instantiation": [], "solving": [],
-                  "symmetry_detection": []},
-        "chosen": {"answers": set(), "bes_eqs": set(), "instantiation": [], "solving": []},
+                  "symmetry_detection": None, "symmetry_used": set()},
+        "chosen": {"answers": set(), "bes_eqs": set(), "instantiation": [], "solving": [],
+                   "symmetry_used": set()},
     })
 
     for rows in all_files_rows:
@@ -202,6 +187,9 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
             if r.get("bes_eqs"):
                 tgt["bes_eqs"].add(str(r["bes_eqs"]))
 
+            if r.get("symmetry_used"):
+                tgt["symmetry_used"].add(str(r["symmetry_used"]))
+
             for tf in TIME_FIELDS:
                 v = r.get(tf)
                 if v not in (None, ""):
@@ -210,9 +198,10 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
                     except:
                         pass
 
-            if "symmetry_detection" in r and r["symmetry_detection"] not in (None, ""):
+            if r.get("symmetry_detection") not in (None, ""):
                 try:
-                    b["first"]["symmetry_detection"].append(float(r["symmetry_detection"]))
+                    b["first"]["symmetry_detection"] = float(
+                        r["symmetry_detection"])
                 except:
                     pass
 
@@ -223,7 +212,7 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
 
     for (model, prop), b in agg.items():
 
-        # Determine answer
+        # Compare answers across variants
         all_answers = []
         for variant in ("original", "first", "chosen"):
             all_answers.extend(a for a in b[variant]["answers"] if a)
@@ -238,43 +227,36 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
             else:
                 result_answer = ""
 
-        # Times
-        original_time = avg([i + s for i, s in zip(b["original"]["instantiation"], b["original"]["solving"])])
-        first_solve = avg([i + s for i, s in zip(b["first"]["instantiation"], b["first"]["solving"])])
-        detect = avg(b["first"]["symmetry_detection"])
-        chosen_time = avg([i + s for i, s in zip(b["chosen"]["instantiation"], b["chosen"]["solving"])])
-
-        if first_solve is None and detect is None :
-            first_time = "-"
-
-        elif first_solve is None :
-            first_time = "t-o"
-
-        else:
-            first_time = f"{format_time(first_solve)}"
-
-        if detect is None:
-            detection_cell = "t-o"
-        else:
-            detection_cell = f"+{format_time(detect)}"
-
         aggregated.append({
-            "model": model or "-",
-            "property": prop or "-",
-            "answer": "-" if result_answer == "" else format_answer(result_answer),
+            "model": model,
+            "property": prop,
+            "answer": "?" if result_answer == "?" else format_answer(result_answer),
 
-            "original_v": next(iter(b["original"]["bes_eqs"]), "-") or "-",
-            "first_v": next(iter(b["first"]["bes_eqs"]), "-") or "-",
-            "chosen_v": next(iter(b["chosen"]["bes_eqs"]), "-") or "-",
+            "original_v": next(iter(b["original"]["bes_eqs"]), ""),
+            "original_runtime": avg([i + s for i, s in zip(b["original"]["instantiation"], b["original"]["solving"])]),
 
-            "original_time": original_time,
-            "first_time": first_time,
-            "detection": detection_cell,     # NEW position
-            "chosen_time": chosen_time,
+            "first_detection": b["first"]["symmetry_detection"],
+            "first_symmetry": next(iter(b["first"]["symmetry_used"]), ""),
+            "first_v": next(iter(b["first"]["bes_eqs"]), ""),
+            "first_runtime": avg([i + s for i, s in zip(b["first"]["instantiation"], b["first"]["solving"])]),
+
+            "chosen_symmetry": next(iter(b["chosen"]["symmetry_used"]), ""),
+            "chosen_v": next(iter(b["chosen"]["bes_eqs"]), ""),
+            "chosen_runtime": avg([i + s for i, s in zip(b["chosen"]["instantiation"], b["chosen"]["solving"])]),
         })
 
     aggregated.sort(key=lambda r: (r["model"], r["property"]))
     return aggregated
+
+
+def latex_to_bool(x: str) -> str:
+    if not isinstance(x, str):
+        return x
+    if x.strip() == r"$\checkmark$":
+        return "true"
+    if x.strip() == r"$\times$":
+        return "false"
+    return x
 
 
 # -----------------------
@@ -284,9 +266,17 @@ def aggregate_rows(all_files_rows: List[List[Dict[str, Any]]]) -> List[Dict[str,
 def write_csv(rows: List[Dict[str, Any]], path: str, digits: int):
     fields = [
         "model", "property", "answer",
-        "original_v", "first_v", "chosen_v",
-        "original_time", "first_time", "detection", "chosen_time"  # detection between first_time and chosen_time
+        "original_v", "original_runtime",
+        "first_detection", "first_symmetry", "first_v", "first_runtime",
+        "chosen_symmetry", "chosen_v", "chosen_runtime"
     ]
+
+    def fmt(x):
+        s = format_float(x, digits)
+        return s if s != "" else "t-o"
+
+    def fmt_symmetry(s):
+        return s.replace("$", "")
 
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -296,18 +286,16 @@ def write_csv(rows: List[Dict[str, Any]], path: str, digits: int):
             w.writerow([
                 r["model"],
                 r["property"],
-                r["answer"],
-
+                latex_to_bool(r["answer"]),
                 r["original_v"],
+                fmt(r["original_runtime"]),
+                fmt(r["first_detection"]),
+                fmt_symmetry(r["first_symmetry"]),
                 r["first_v"],
+                fmt(r["first_runtime"]),
+                fmt_symmetry(r["chosen_symmetry"]),
                 r["chosen_v"],
-
-                format_time(r["original_time"]),
-                # Note: first_time may be a composed string like "a + b"; original script used format_time,
-                # keeping behavior consistent with minimal change request.
-                format_time(r["first_time"]),
-                r["detection"],
-                format_time(r["chosen_time"]),
+                fmt(r["chosen_runtime"]),
             ])
 
     print(f"Wrote CSV to: {path}")
@@ -320,29 +308,29 @@ def write_csv(rows: List[Dict[str, Any]], path: str, digits: int):
 def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) -> str:
     header = [
         "", "", "",
-        "\\multicolumn{3}{c|}{$|V|$}",
-        "\\multicolumn{4}{c}{Time}",  # Time now spans 4 columns
+        "\\multicolumn{2}{c|}{Original}",
+        "\\multicolumn{4}{c|}{First}",
+        "\\multicolumn{3}{c}{Chosen}",
     ]
 
     subheader = [
         "Model",
         "Property",
         "Result",
-        "\\multicolumn{1}{c}{Original}",
-        "\\multicolumn{1}{c}{First}",
-        "\\multicolumn{1}{c|}{Chosen}",
-        "\\multicolumn{1}{c}{Original}",
-        "\\multicolumn{1}{c}{First}",
-        "\\multicolumn{1}{c}{Detection}",  # Detection between First and Chosen
-        "\\multicolumn{1}{c}{Chosen}",
+        r"$|V|$",
+        "Time",
+        "Detection",
+        "$\\pi$",
+        r"$|V|$",
+        "Time",
+        "$\\pi$",
+        r"$|V|$",
+        "Time",
     ]
 
-    def fmt_cell(x):
-        if isinstance(x, str):
-            return x if x.strip() else "-"
-        else:
-            txt = format_time(x)
-            return txt if txt.strip() else "-"
+    def format_time_or_to(x: Any, d: int) -> str:
+        s = format_float(x, d)
+        return s if s != "" else "t-o"
 
     body_rows = []
     for r in rows:
@@ -352,13 +340,16 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
             r["answer"],
 
             latex_escape(r["original_v"]),
-            latex_escape(r["first_v"]),
-            latex_escape(r["chosen_v"]),
+            format_time_or_to(r["original_runtime"], digits),
 
-            fmt_cell(r["original_time"]),
-            fmt_cell(r["first_time"]),
-            latex_escape(r["detection"]),     # Detection here, between first and chosen
-            fmt_cell(r["chosen_time"]),
+            format_time_or_to(r["first_detection"], digits),
+            latex_escape(r["first_symmetry"]),
+            latex_escape(r["first_v"]),
+            format_time_or_to(r["first_runtime"], digits),
+
+            latex_escape(r["chosen_symmetry"]),
+            latex_escape(r["chosen_v"]),
+            format_time_or_to(r["chosen_runtime"], digits),
         ]))
 
     body = " \\\\\n".join(body_rows)
@@ -385,9 +376,8 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
 
 \\resizebox{{\\linewidth}}{{!}}{{%
 \\rowcolors{{3}}{{white}}{{rowgray}}
-\\begin{{tabular}}{{llc|rrr|rrrr}}
+\\begin{{tabular}}{{llc|rr|rrrr|rrr}}
 {" & ".join(header)} \\\\
-\\midrule
 {" & ".join(subheader)} \\\\
 \\midrule
 {body} \\\\
@@ -399,6 +389,39 @@ def build_latex_document(rows: List[Dict[str, Any]], title: str, digits: int) ->
 
 \\end{{document}}
 """
+
+
+def print_csv_pretty(path: str):
+
+    rows = []
+    with open(path, "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        rows = list(reader)
+
+    if not rows:
+        print("CSV is empty.")
+        return
+
+    # Compute max width per column
+    num_cols = len(rows[0])
+    col_widths = [0] * num_cols
+
+    for row in rows:
+        for i, cell in enumerate(row):
+            col_widths[i] = max(col_widths[i], len(cell))
+
+    # Pretty print
+    print("\n=== CSV Output ===")
+    for r_idx, row in enumerate(rows):
+        padded = [
+            cell.ljust(col_widths[i])
+            for i, cell in enumerate(row)
+        ]
+        line = " | ".join(padded)
+        print(line)
+        if r_idx == 0:
+            print("-" * len(line))
+    print("==================\n")
 
 
 # -----------------------
@@ -420,7 +443,11 @@ def main():
         os.path.dirname(os.path.abspath(args.inputs[0])), "table.tex"
     )
 
-    csv_path = args.csv or None
+    csv_path = args.output or os.path.join(
+        os.path.dirname(os.path.abspath(args.inputs[0])), "table.csv"
+    )
+
+    csv_path = args.csv or csv_path
 
     all_rows = []
     for path in args.inputs:
@@ -435,13 +462,16 @@ def main():
 
     aggregated = aggregate_rows(all_rows)
 
+    # Write LaTeX
     tex = build_latex_document(aggregated, args.title, args.digits)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(tex)
     print(f"Wrote LaTeX to: {out_path}")
 
+    # Write CSV
     if csv_path:
         write_csv(aggregated, csv_path, args.digits)
+        print_csv_pretty(csv_path)
 
 
 if __name__ == "__main__":
