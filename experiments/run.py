@@ -441,13 +441,13 @@ def pbes_symmetry(dirname, root, property_name, mcrl2=mcrl2_path, hint=None):
     try:
         print("Trying pbessymmetry")
         if hint == "all":
-            data = run_command(mcrl2mercpath, "merc-pbes", ["symmetry", "--partition-data-sorts", "--partition-data-updates", "--all-symmetries"],
+            data = run_command(mcrl2_merc_path, "merc-pbes", ["symmetry", "--partition-data-sorts", "--partition-data-updates", "--all-symmetries"],
                                pbesfile, timeout=TIMEOUT,
                                memlimit=MEMLIMIT)
             logging.info("Successfully ran pbessymmetry for all symmetries.")
             print("Time: {}".format(data["totaltime"]))
         elif hint == "first":
-            data = run_command(mcrl2mercpath, "merc-pbes", ["symmetry", "--partition-data-sorts", "--partition-data-updates"],
+            data = run_command(mcrl2_merc_path, "merc-pbes", ["symmetry", "--partition-data-sorts", "--partition-data-updates"],
                                pbesfile, timeout=TIMEOUT,
                                memlimit=MEMLIMIT)
             logging.info("Successfully ran pbessymmetry for first symmetry.")
