@@ -39,8 +39,7 @@ We provided the output of these runs in "Desktop>pbes-symmetry-experiments>exper
 -------------------------------------------------------------------------------------------------------
 
 To generate the table the script "Desktop>pbes-symmetry-experiments>experiments>table.py" can be used. 
-This pretty prints the results to the terminal, and generates a "table.tex" an
-d "table.csv" file. 
+This pretty prints the results to the terminal, and generates a "table.tex" and "table.csv" file. 
 Example usage: 
 
     python3 table.py results-1.yaml
