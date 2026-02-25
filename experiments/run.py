@@ -40,7 +40,7 @@ MODELS_XL = {"mutex",
              "alloc3", "alloc4", "alloc5", "alloc6", "alloc7", "alloc8"}
 
 WORKFLOWS_FIRST_CHOSEN = ["original", "chosen", "first"]  # Default
-WORKFLOWS_CHOSEN = ["chosen"]
+WORKFLOWS_CHOSEN = ["original","chosen"]
 WORKFLOWS_FIRST = ["original", "first"]
 WORKFLOWS_ALL = ["original", "all"]
 
