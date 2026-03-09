@@ -1,5 +1,0 @@
-act a;
-
-proc P(x:Nat)=a.P(if(true,x,17));
-
-init P(0); 

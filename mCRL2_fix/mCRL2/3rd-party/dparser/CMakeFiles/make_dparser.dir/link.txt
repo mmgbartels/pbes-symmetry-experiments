@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/make_dparser.dir/make_dparser.c.o CMakeFiles/make_dparser.dir/version.c.o -o ../../stage/bin/make_dparser  -Wl,-rpath,/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/stage/lib ../../stage/lib/libmkdparse.a ../../stage/lib/libdparser.so 

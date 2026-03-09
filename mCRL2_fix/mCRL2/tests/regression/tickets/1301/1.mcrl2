@@ -1,3 +1,0 @@
-sort CPU = struct p1; sort CPUs = Set(CPU);
-
-init delta; 

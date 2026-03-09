@@ -1,7 +1,0 @@
-act a;
-
-proc T = (tau . T)
-
-    + (tau . a); % no problem if this tau is removed
-
-init T ; 

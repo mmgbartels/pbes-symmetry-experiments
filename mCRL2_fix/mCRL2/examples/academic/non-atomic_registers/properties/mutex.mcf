@@ -1,4 +1,0 @@
-% Mutual exclusion
-forall tid, tid': TID.
-    val(valid_tid(tid) && valid_tid(tid') && tid != tid') =>
-        [true*]!(<label(c(tid))>true && <label(c(tid'))>true)

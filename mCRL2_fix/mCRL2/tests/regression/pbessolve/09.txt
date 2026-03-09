@@ -1,6 +1,0 @@
-pbes
-
-nu X(b:Bool, n:Nat) = true;
-
-init X(true,0);
-

@@ -1,3 +1,0 @@
-act a;
-proc P = a . P;
-init P;

@@ -113,9 +113,9 @@ def property_filepath(dirname, property_name):
 
 
 def regex_explicit(input):
-    if re.match(r"(?s:.*)Generated ([+\-]?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+\-]?\d+)?)", input):
+    if re.match(r"(?s:.*)Generated (\d+) BES equations", input):
         result = re.match(
-            r"(?s:.*)Generated ([+\-]?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+\-]?\d+)?)", input)
+            r"(?s:.*)Generated (\d+) BES equations", input)
     else:
         result = ''
     return result

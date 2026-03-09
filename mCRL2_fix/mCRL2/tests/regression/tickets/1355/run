@@ -1,3 +1,0 @@
-txt2lps 1.mcrl2 1.lps
-lpsrewr 1.lps 1a.lps
-lpspp 1a.lps

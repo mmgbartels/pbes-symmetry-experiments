@@ -1,5 +1,0 @@
-act
-  a,b,c,d;
-
-init
-  block({d}, rename({b -> a}, d || b));

@@ -1,4 +1,0 @@
-pbes nu X = X;
-
-init X;
-

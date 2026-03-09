@@ -1,2 +1,0 @@
-[true*] (forall c, c': Configuration.
-  [operating(c)|operating(c')]val(c == c'))

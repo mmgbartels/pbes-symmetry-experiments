@@ -1,1 +1,0 @@
-/usr/bin/cc -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libtr.so -o ../../stage/lib/libtr.so CMakeFiles/tr.dir/source/tr.c.o  -Wl,-rpath,:::::::::::::: /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 

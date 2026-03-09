@@ -1,2 +1,0 @@
-<true*>
-  <exists d: Data . communicate(manager_in(1), data(d))>true

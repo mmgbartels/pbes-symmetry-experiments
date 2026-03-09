@@ -1,8 +1,0 @@
-act  a: Bool;
-
-proc P(b: Bool) =
-       a(b) .
-         P(b = !b)
-     + delta;
-
-init P(true);

@@ -1,3 +1,0 @@
-act a, b, c;
-
-init comm({a|b -> tau}, allow({c}, c ) ); 
