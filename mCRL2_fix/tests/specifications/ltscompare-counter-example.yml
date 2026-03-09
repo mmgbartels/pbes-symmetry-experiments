@@ -1,0 +1,79 @@
+nodes:
+  l1:
+    type: mcrl2
+  l2:
+    type: lps
+  l3:
+    type: lts
+  l4:
+    type: lts
+  l5:
+    type: lts
+  l6:
+    type: lts
+  l7:
+    type: mcf
+  l8:
+    type: pbes
+  l9:
+    type: pbes
+
+tools:
+  t1:
+    input: [l1]
+    output: [l2]
+    args: [-n]
+    name: mcrl22lps
+  t2:
+    input: [l2]
+    output: [l3]
+    args: []
+    name: lps2lts
+  t3:
+    input: [l3]
+    output: [l4]
+    args: [-etrace]
+    name: ltsconvert
+  t4:
+    input: [l3, l4]
+    output: [l7]
+    args: [-c]
+    name: ltscompare
+  t5:
+    input: [l3, l4]
+    output: []
+    args: []
+    name: ltscompare
+  t6:
+    input: [l3]
+    output: [l5]
+    args: [-enone]
+    name: ltsconvert
+  t7:
+    input: [l4]
+    output: [l6]
+    args: [-enone]
+    name: ltsconvert
+  t8:
+    input: [l5, l7]
+    output: [l8]
+    args: []
+    name: lts2pbes
+  t9:
+    input: [l6, l7]
+    output: [l9]
+    args: []
+    name: lts2pbes
+  t10:
+    input: [l8]
+    output: []
+    args: []
+    name: pbessolve
+  t11:
+    input: [l9]
+    output: []
+    args: []
+    name: pbessolve
+
+result: |
+  result = (t4.value['result'] == t5.value['result']) and (t4.value['result'] or t10.value['solution'] != t11.value['solution'])

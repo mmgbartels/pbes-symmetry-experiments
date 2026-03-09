@@ -1,0 +1,9 @@
+mcrl2_add_tool(lpscombine
+  SOURCES
+    combine.cpp
+    lpscombine.cpp
+    lts_combine.cpp
+  DEPENDS
+    mcrl2_lps
+    mcrl2_lts
+)

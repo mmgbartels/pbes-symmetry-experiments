@@ -1,0 +1,11 @@
+mcrl2_add_tool(pbessymbolicbisim
+  SOURCES
+    pbessymbolicbisim.cpp
+    simplifier.cpp
+  DEPENDS
+    mcrl2_atermpp
+    mcrl2_pbes
+    mcrl2_lts
+    mcrl2_process
+    mcrl2_smt
+)

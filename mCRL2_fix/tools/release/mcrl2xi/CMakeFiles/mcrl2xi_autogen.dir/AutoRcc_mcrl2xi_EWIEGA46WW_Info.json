@@ -1,0 +1,22 @@
+{
+	"BUILD_DIR" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi/mcrl2xi_autogen",
+	"CMAKE_BINARY_DIR" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi",
+	"CMAKE_SOURCE_DIR" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2",
+	"INCLUDE_DIR" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi/mcrl2xi_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi/mcrl2xi.ico"
+	],
+	"LOCK_FILE" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi/CMakeFiles/mcrl2xi_autogen.dir/AutoRcc_mcrl2xi_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "mcrl2xi" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_mcrl2xi.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi/CMakeFiles/mcrl2xi_autogen.dir/AutoRcc_mcrl2xi_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/tue20244606/Documents/phd/mcrl2experimentalinstall/mCRL2/tools/release/mcrl2xi/mcrl2xi.qrc",
+	"VERBOSITY" : 0
+}

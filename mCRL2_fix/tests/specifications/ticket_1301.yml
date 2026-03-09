@@ -1,0 +1,31 @@
+nodes:
+  l1:
+    type: mcrl2
+  l2:
+    type: lps
+  l3:
+    type: mcf
+  l4:
+    type: pbes
+  l5:
+    type: text
+
+tools:
+  t1:
+    input: [l1]
+    output: [l2]
+    args: []
+    name: mcrl22lps
+  t2:
+    input: [l2, l3]
+    output: [l4]
+    args: []
+    name: lps2pbes
+  t3:
+    input: [l4]
+    output: [l5]
+    args: []
+    name: pbespp
+
+result: |
+  result = True
